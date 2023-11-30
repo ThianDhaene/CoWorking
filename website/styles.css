@@ -2,21 +2,27 @@ body {
     background-color: bisque;
   }
 
+
 .navigation ul{
     list-style-type: none;
-    margin: 0;
+    margin: 10;
     padding: 0;
-    overflow: hidden;
     background-color: #333;
-    border-radius: 25px;
+    border-radius: 50px;
 }
 
 .navigation li {
     float: left;
-    
 }
 
 .navigation li a{
+    color:black;
+    margin: 20px;
+
+    outline-style: double;
+    outline-color: rgb(142, 65, 17);
+    outline-width: thick;
+
     display: block;
     border-radius: 25px;
     color: white;
@@ -27,4 +33,16 @@ body {
 
 .navigation li a:hover{
     background-color: rgb(99, 66, 17);
+    color:white;
+
+    outline-style: double;
+    outline-color: rgb(142, 65, 17);
+    outline-width: thick;
+    outline-offset: 5px;
+}
+
+.logo{
+    display: block;
+    width: 100px;
+    height: 100px;
 }
