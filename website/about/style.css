@@ -1,0 +1,131 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+ }
+  html {
+    font-size: 40.5%;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-size: 1.6rem;
+    background-color: rgb(224, 224, 224);
+    color: #000000;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  header {
+    margin-bottom: 1em;
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+  }
+  nav {
+    margin-right: 150px;
+  }
+  
+  ul {
+    display:flex;
+    list-style-type: none;
+  }
+  nav ul a {
+    position: relative;
+    text-decoration: none;
+    padding: 1em 1.5em;
+    font-family: "Rubik", sans-serif;
+    font-size:2.4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000000;
+    display: inline-block;
+  }
+  
+  nav ul li a:hover::before {
+    width: 100%;
+  }
+  nav ul li a:hover {
+    color: rgb(63, 63, 63)
+  }
+  .logo {
+    display: inline-block;
+    width: 10em;
+  }
+  
+  nav ul li a:hover {
+    color: #eee;
+    -webkit-text-stroke: 1px rgb(5, 5, 5);
+  }
+  
+  .logo {
+    display: inline-block;
+    width: 5em;
+  }
+  .account{
+    display: inline-block;
+    width: 4em;
+  }
+  .cart {
+    display: inline-block;
+    width: 4em;
+  }
+h1,
+p{
+  font-family: "Rubik", sans-serif;
+}
+
+h1,
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+h1 {
+  font-size: 12rem;
+  color: rgb(78, 78, 78);
+}
+.about {
+  -webkit-text-stroke: 0.02em rgb(0, 0, 0);
+  -webkit-text-fill-color: transparent;
+}
+
+.logo:active {
+  rotate: 270deg;
+  transition: rotate 0.15s ease-in-out;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  margin-left: 60em;
+  box-shadow: 0 0 0 100vmax rgb(0, 0, 0, 0.3);
+  clip-path: inset(0-100vmax);
+  background-color: rgb(0,0,0, 0.3);
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+footer p {
+  font-size: 1.5rem;
+  margin-right: 44em;
+}
+.socials img {
+  color: white;
+  width: 1em;
+  padding: 0;
+  margin: 3 1em;
+  display: inline-block;
+}
+.socials ul {
+  display: flex;
+  align-items: center;
+}
+.socials a {
+  padding: 0;
+}  
+.about:hover {
+  cursor: default;
+  -webkit-text-fill-color:rgb(0, 0, 0);
+  -webkit-text-stroke: 0.02em rgb(224, 224, 224);
+}

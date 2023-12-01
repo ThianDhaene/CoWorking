@@ -1,0 +1,129 @@
+.outline {
+  -webkit-text-stroke: 0.02em rgb(0, 0, 0);
+  -webkit-text-fill-color: transparent;
+}
+a {
+  text-decoration: none;
+}
+h3,
+p,
+.projects-all ul,
+.projects-all li {
+  margin: 0;
+  padding: 0;
+}
+
+.projects-all ul {
+  margin-top: 3em;
+  margin-bottom: 40em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 5em 3em;
+}
+.projects-all ul li a {
+  height: 53vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 2em;
+  border-left: 2em solid rgb(0, 0, 0);
+  border-top: 2em solid rgb(0, 0, 0);
+  border-right: 2em solid rgb(0, 0, 0);
+  border-bottom: 6em solid rgb(0, 0, 0);
+  box-shadow: -0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+.projects-all ul li {
+  width: 30%;
+  height: 50vh;
+  background-color: #222;
+  border-radius: 2em;
+}
+.projects-all ul li p,
+.projects-all ul li h3 {
+  color: #eee;
+  font-family: "Rubik", sans-serif;
+}
+.projects-all ul li.oneven p,
+.projects-all ul li.oneven h3 {
+  color: #ffffff;
+}
+.projects-all ul li a img {
+  z-index: 0;
+  overflow: hidden;
+  position: center;
+  bottom: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+}
+
+.projects-all ul li a .btn {
+  visibility: hidden;
+  position: absolute;
+  bottom: -0.75em;
+  z-index: 2;
+  padding: 0.25em 2.5em;
+  border-radius: 1em;
+  border: 0.15em solid #222;
+  background-color: rgb(2, 2, 2, 0.2);
+  color: #222;
+  font-weight: bold;
+  font-size: 1.8rem;
+  font-family: "Rubik", sans-serif;
+  width: max-content;
+  height: min-content;
+}
+.projects-all ul li.oneven a .btn {
+  background-color: rgb(221, 221, 221);
+}
+.projects-all ul li:hover {
+  scale: 1.02;
+}
+.projects-all ul li:hover a .btn {
+  visibility: visible;
+  background-color: #222;
+  color: rgb(221, 221, 221);
+}
+footer {
+  box-shadow: 0 0 0 100vmax rgb(0, 0, 0, 0.3);
+  clip-path: inset(0-100vmax);
+  background-color: rgb(0,0,0, 0.3);
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+footer p {
+  font-size: 1.5rem;
+  margin-right: 44em;
+
+}
+.socials img {
+  color: white;
+  width: 1em;
+  padding: 0;
+  margin: 3 1em;
+  display: inline-block;
+}
+.socials ul {
+  display: flex;
+  align-items: center;
+}
+.socials a {
+  padding: 0;
+}
+.outline:hover {
+  cursor: default;
+  -webkit-text-fill-color: rgb(0, 0, 0);
+  -webkit-text-stroke: 0.02em rgb(0, 0, 0);
+}
+.socials a {
+  padding: 0;
+  margin: 0;
+}
