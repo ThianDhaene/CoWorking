@@ -95,6 +95,7 @@ h1 {
   transition: rotate 0.15s ease-in-out;
 }
 footer {
+  position: absolute;
   bottom: 0;
   margin-left: 60em;
   box-shadow: 0 0 0 100vmax rgb(0, 0, 0, 0.3);
