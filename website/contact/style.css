@@ -155,7 +155,7 @@ input[type=button] {
   box-shadow: 0 0 1rem rgba(0,0,0,0.2);
 }
 input[type=button]:hover {
-  scale: 1.01;
+  scale: 1.05;
   background-color: rgb(162, 162, 162);
   color: black;
 }
