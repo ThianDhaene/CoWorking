@@ -139,6 +139,7 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
   font-size: 15px;
+  font-family: "Rubik", sans-serif;
 }
 
 input[type=button] {
@@ -148,6 +149,9 @@ input[type=button] {
   border: none;
   border-radius: 2em;
   cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 input[type=submit]:hover {
