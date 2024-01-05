@@ -28,6 +28,7 @@ header {
   align-items:center;
   justify-content: space-around;
 }
+
 .container {
   max-width: 80rem;
   margin: 0 auto 0 auto;
