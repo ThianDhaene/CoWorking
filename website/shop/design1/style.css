@@ -1,0 +1,89 @@
+/* Add your general styles here */
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Main Content Styles */
+.product-container {
+    margin-top: 50px;
+    display: inline-flex;
+}
+
+.left-column{
+
+}
+
+.right-column{
+    max-width: 100rem;
+    margin: 5rem;
+}
+
+.product-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.add-to-cart-form {
+    margin-bottom: 20px;
+}
+
+.quantity-label {
+    font-size: 16px;
+}
+
+.quantity-input {
+    scale: 1.2;
+    width: 50px;
+    margin-left: 10px;
+}
+
+.add-to-cart-button {
+    background-color: transparent;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px static black;
+    border-radius: 3em;
+    cursor: pointer;
+    width: 50%;
+}
+
+.add-to-cart-button:hover {
+    opacity: 0.8;
+    color: white;
+    background-color: black;
+}
+.about {
+    -webkit-text-stroke: 0.02em rgb(0, 0, 0);
+    -webkit-text-fill-color: rgb(0, 0, 0);
+  }
+
+.about:hover {
+    cursor: default;
+    -webkit-text-fill-color:rgb(224, 224, 224);
+    -webkit-text-stroke: 0.02em rgb(0, 0, 0);
+  }

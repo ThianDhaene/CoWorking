@@ -38,29 +38,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_cart"])) {
 }
 ?>
 
-
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="eng">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ietsgent | shop</title>
     <link rel="icon" href="../../img/logo2.png" />
     <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../about/style.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="../about/style.css" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet"/>
   </head>
   <body>
-    <header>
-      <a href="./">
+    <header class="container" >
+      <a href="./../../">
         <img src="../../img/logo2_zonder_achtergrond.png" class="logo" alt="">
       </a>
       <nav>
@@ -76,21 +70,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_cart"])) {
         <li><a href="../../cart"><img src="../../img/winkelmandje.webp" class="cart" alt=""></a></li>
        </ul>
     </header>
-    <main>
+    <main class="container">
       <div class="product-container">
-        <h2>ietsgents Hoodie</h2>
-        <img src="hoodie.png" alt="Product Image">
-        <p>Introducing the ietsgents Hoodie where simplicity meets style. Crafted with precision, this hoodie embodies clean lines and a sleek design, making it the perfect wardrobe essential for those who appreciate understated elegance. Elevate your casual look with the ietsgents Minimalistic Hoodie and embrace the essence of modern minimalism.</p>
-        <p>Price: $19.99</p>
-
-        <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-            <label for="quantity">Quantity:</label>
-            <input type="number" name="quantity" value="1" min="1" required>
-            <br>
-            <input type="submit" name="add_to_cart" value="Add to Cart">
-        </form>
-
-    </div>
+        <div class="left-column">
+          <img src="hoodie.png" alt="Product Image" class="product-image">
+        </div>
+        <div class="right-column">
+          <h2 class="product-title"><span class="about">i</span><span class="about">e</span><span class="about">t</span><span class="about">s</span><span class="about">g</span><span class="about">e</span><span class="about">n</span><span class="about">t</span><span class="about">s</span><span class="about"> h</span><span class="about">o</span><span class="about">o</span><span class="about">d</span><span class="about">i</span><span class="about">e</span></h2>
+          <p class="product-price">Price: $19.99</p>
+          <p class="product-description">Introducing the ietsgents Hoodie where simplicity meets style. Crafted with precision, this hoodie embodies clean lines and a sleek design, making it the perfect wardrobe essential for those who appreciate understated elegance. Elevate your casual look with the ietsgents Minimalistic Hoodie and embrace the essence of modern minimalism.</p>
+          <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="add-to-cart-form">
+              <label for="quantity" class="quantity-label">Quantity:</label>
+              <input type="number" name="quantity" value="1" min="1" required class="quantity-input">
+              <br>
+              <input type="submit" name="add_to_cart" value="Add to Cart" class="add-to-cart-button">
+          </form>
+        </div>
+      </div>
     
   </main>
   <footer>
