@@ -79,6 +79,8 @@ $conn->close();
                 <!-- Add more details as needed -->
             </ul>
         </div>
+        <h1>Your Orders</h1>
+
         <?php
         // Check if there are orders
         if ($result->num_rows > 0) {
@@ -90,7 +92,7 @@ $conn->close();
 
                 // Fetch order items
                 $items_sql = "SELECT * FROM order_items WHERE order_id = $order_id";
-                $items_result = $conn->query($items_sql);
+                // $items_result = $conn->query($items_sql);
         ?>
 
                 <div class="order">
