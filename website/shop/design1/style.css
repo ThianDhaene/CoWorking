@@ -14,10 +14,6 @@ body {
     display: inline-flex;
 }
 
-.left-column{
-
-}
-
 .right-column{
     max-width: 100rem;
     margin: 5rem;
