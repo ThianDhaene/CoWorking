@@ -30,8 +30,6 @@ $sql = "SELECT * FROM orders WHERE user_id = $user_id ORDER BY order_date DESC";
 $result = $conn->query($sql);
 
 // You can use this information to fetch more details from the database if needed
-
-$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +78,6 @@ $conn->close();
             </ul>
         </div>
         <h1>Your Orders</h1>
-
         <?php
         // Check if there are orders
         if ($result->num_rows > 0) {
@@ -92,10 +89,9 @@ $conn->close();
 
                 // Fetch order items
                 $items_sql = "SELECT * FROM order_items WHERE order_id = $order_id";
-                // $items_result = $conn->query($items_sql);
+                $items_result = $conn->query($items_sql);
         ?>
-
-                <div class="order">
+        <div class="order">
                     <p>Order ID: <?php echo $order_id; ?></p>
                     <p>Order Date: <?php echo $order_date; ?></p>
                     <p>Total Amount: <?php echo $total_amount; ?></p>
@@ -113,10 +109,20 @@ $conn->close();
                             $product_sql = "SELECT * FROM products WHERE product_id = $product_id";
                             $product_result = $conn->query($product_sql);
                             $product = $product_result->fetch_assoc();
+
+                            // Fetch product name separately
+                            $product_name_sql = "SELECT name FROM products WHERE product_id = $product_id";
+                            $product_name_result = $conn->query($product_name_sql);
+
+                            if ($product_name_result && $product_name_result->num_rows > 0) {
+                                $product_name = $product_name_result->fetch_assoc()['name'];
+                            } else {
+                                $product_name = "Product Not Found";
+                            }
                     ?>
 
                             <div class="order-item">
-                                <p>Product: <?php echo $product['product_name']; ?></p>
+                                <p>Product: <?php echo $product['name']; ?></p>
                                 <p>Quantity: <?php echo $quantity; ?></p>
                                 <p>Price: <?php echo $price; ?></p>
                             </div>
@@ -128,6 +134,7 @@ $conn->close();
                     }
                     ?>
                 </div>
+                
 
         <?php
             }
@@ -141,3 +148,6 @@ $conn->close();
 
 </body>
 </html>
+<?php
+$conn->close();
+?>

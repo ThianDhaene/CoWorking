@@ -5,7 +5,15 @@
 }
 
 .userinfo ul li{
+    display: flex;
+    flex-direction: column;
     font-size: large;
     padding-right: 2rem;
+}
+
+.order {
+    margin-bottom: 2rem;
+    border: 2px solid;
+    border-radius: 15px;
 }
 
