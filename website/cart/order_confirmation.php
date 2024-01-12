@@ -57,7 +57,7 @@ if ($result->num_rows > 0) {
         <h2>Order Details</h2>
         <p>Order ID: <?php echo $order['order_id']; ?></p>
         <p>Order Date: <?php echo $order['order_date']; ?></p>
-        <p>Total Amount: <?php echo $order['total_amount']; ?></p>
+        <p>Total Amount: €<?php echo $order['total_amount']; ?></p>
         <p>Status: <?php echo $order['status']; ?></p>
         
         <h2>Ordered Items</h2>
@@ -88,7 +88,7 @@ if ($result->num_rows > 0) {
                 <div class="order-item">
                     <p>Product: <?php echo $product_name; ?></p>
                     <p>Quantity: <?php echo $quantity; ?></p>
-                    <p>Price: <?php echo $price; ?></p>
+                    <p>Price: €<?php echo $price; ?></p>
                 </div>
         <?php
             }
