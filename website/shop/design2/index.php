@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 
 // Handle adding a test product (product ID 1) to the cart
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_cart"])) {
-  $product_id = 1; // Set the product ID to 1
+  $product_id = 2; // Set the product ID to 1
   $quantity = $_POST["quantity"];
 
   // Check if the product is already in the cart
@@ -78,8 +78,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_cart"])) {
     </header>
     <main>
       <div class="product-container">
-        <h2>ietsgents Hoodie</h2>
-        <img src="hoodie.png" alt="Product Image">
+        <h2>ietsgents Tshirt</h2>
+        <img src="tshirt_black.png" alt="Product Image">
         <p>Introducing the ietsgents Hoodie where simplicity meets style. Crafted with precision, this hoodie embodies clean lines and a sleek design, making it the perfect wardrobe essential for those who appreciate understated elegance. Elevate your casual look with the ietsgents Minimalistic Hoodie and embrace the essence of modern minimalism.</p>
         <p>Price: $19.99</p>
 

@@ -33,7 +33,22 @@ $result = $conn->query($sql);
 $address_sql = "SELECT street, number, city, postal_code, country, extra_info FROM orders WHERE user_id = $user_id ORDER BY order_date DESC LIMIT 1";
 $address_result = $conn->query($address_sql);
 
+// Check if address information exists
+if ($address_result && $address_result->num_rows > 0) {
+    $address = $address_result->fetch_assoc();
+    $street = $address['street'];
+    $number = $address['number'];
+    $city = $address['city'];
+    $zipcode = $address['postal_code'];
+    $country = $address['country'];
+    $extra_info = $address['extra_info'];
+} else {
+    // Set default values or handle as needed
+    $street = $number = $city = $zipcode = $country = $extra_info = "";
+}
+
 // You can use this information to fetch more details from the database if needed
+
 ?>
 
 <!DOCTYPE html>
@@ -87,11 +102,11 @@ $address_result = $conn->query($address_sql);
             </ul>
             <p>Your Address:</p>
                 <ul>
-                    <li>Street: <?php echo $address['street']; ?></li>
-                    <li>Number: <?php echo $address['number']; ?></li>
-                    <li>City: <?php echo $address['city']; ?></li>
-                    <li>Postal Code: <?php echo $address['postal_code']; ?></li>
-                    <li>Country: <?php echo $address['country']; ?></li>
+                    <li>Street: <?php echo $street; ?></li>
+                    <li>Number: <?php echo $number; ?></li>
+                    <li>City: <?php echo $city; ?></li>
+                    <li>Postal Code: <?php echo $zipcode; ?></li>
+                    <li>Country: <?php echo $country; ?></li>
                     <?php if (!empty($address['extra_info'])) { ?>
                         <li>Extra Information: <?php echo $address['extra_info']; ?></li>
                     <?php } ?>
@@ -114,7 +129,7 @@ $address_result = $conn->query($address_sql);
         <div class="order">
                     <p>Order ID: <?php echo $order_id; ?></p>
                     <p>Order Date: <?php echo $order_date; ?></p>
-                    <p>Total Amount: <?php echo $total_amount; ?></p>
+                    <p>Total Amount: €<?php echo $total_amount; ?></p>
                     <p>Status: <?php echo $status; ?></p>
 
                     <?php
@@ -144,7 +159,7 @@ $address_result = $conn->query($address_sql);
                             <div class="order-item">
                                 <p>Product: <?php echo $product['name']; ?></p>
                                 <p>Quantity: <?php echo $quantity; ?></p>
-                                <p>Price: <?php echo $price; ?></p>
+                                <p>Price: €<?php echo $price; ?></p>
                             </div>
 
                     <?php

@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_cart"])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["checkout"])) {
     // Insert order details into the database
     $user_id = $_SESSION['user_id'];
-    $total_amount = calculateTotalAmount(); // Implement this function to calculate the total amount
+    $total_amount = calculateTotalAmount($conn); // Implement this function to calculate the total amount
     $street = $_POST['street']; // Get the street from the form
     $number = $_POST['number']; // Get the number from the form
     $city = $_POST['city']; // Get the city from the form
@@ -98,17 +98,44 @@ if (isset($_SESSION['user_id'])) {
       $street = $address['street'];
       $number = $address['number'];
       $city = $address['city'];
-      $postal_code = $address['postal_code'];
+      $zipcode = $address['postal_code'];
       $country = $address['country'];
       $extra_info = $address['extra_info'];
-  }
+  } else {
+    // Set default values or handle as needed
+    $street = $number = $city = $zipcode = $country = $extra_info = "";
+}
 }
 
-
 // Function to calculate the total amount in the cart
-function calculateTotalAmount() {
-    // Implement your logic to calculate the total amount based on the products in the cart
-    return 0; // Replace with your actual calculation
+function calculateTotalAmount($conn) {
+  // Check if the cart is set in the session
+  if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+      $totalAmount = 0;
+
+      // Iterate through each item in the cart
+      foreach ($_SESSION['cart'] as $product_id => $quantity) {
+          // Fetch product details from the database
+          $product_sql = "SELECT price FROM products WHERE product_id = $product_id";
+          $product_result = $conn->query($product_sql);
+
+          if ($product_result && $product_result->num_rows > 0) {
+              $product = $product_result->fetch_assoc();
+              $price = $product['price'];
+
+              // Calculate the total amount for each item and accumulate
+              $totalAmount += $price * $quantity;
+          } else {
+              // Handle the case where product details are not found
+              // You may want to remove the item from the cart or handle it differently
+          }
+      }
+
+      return $totalAmount;
+  }
+
+  // Return 0 if the cart is empty
+  return 0;
 }
 
 // Fetch products from the database
@@ -177,6 +204,7 @@ $product_result = $conn->query($product_sql);
                     }
                 } ?>
             </ul>
+            <p>Total Amount: €<?php echo calculateTotalAmount($conn); ?></p>
             <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
                     <label for="street">Street:</label>
                     <input type="text" name="street" value="<?php echo $street; ?>" required>
@@ -188,7 +216,7 @@ $product_result = $conn->query($product_sql);
                     <input type="text" name="city" value="<?php echo $city; ?>" required>
                     <br>
                     <label for="postal_code">Postal Code:</label>
-                    <input type="text" name="postal_code" value="<?php echo $postal_code; ?>" required>
+                    <input type="text" name="postal_code" value="<?php echo $zipcode; ?>" required>
                     <br>
                     <label for="country">Country:</label>
                     <input type="text" name="country" value="<?php echo $country; ?>" required>
@@ -197,15 +225,13 @@ $product_result = $conn->query($product_sql);
                     <textarea name="extra_info"><?php echo $extra_info; ?></textarea>
                     <br>
                     <input type="submit" name="checkout" value="Checkout">
-                </form>
+              </form>
 
         <?php } else { ?>
             <p>Your shopping cart is empty.</p>
         <?php } ?>
     </div>
   </main>
-  
-
   <footer>
     <div class="footer-p">
       <p>&copy; ietsgents 2023</p>
