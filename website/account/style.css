@@ -1,0 +1,11 @@
+.userinfo ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.userinfo ul li{
+    font-size: large;
+    padding-right: 2rem;
+}
+

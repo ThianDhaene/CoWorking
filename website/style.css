@@ -1,16 +1,19 @@
-
 html {
   font-size: 40.5%;
   scroll-behavior: smooth;
 }
 
- .example::-webkit-scrollbar {
+.example::-webkit-scrollbar {
   display: none;
 }
 .example {
   -ms-overflow-style: none;
   scrollbar-width: none;
 } 
+
+main{
+  min-height: calc(100vh - 130px);
+}
 
 body {
   font-size: 1.6rem;
