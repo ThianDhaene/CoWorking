@@ -32,6 +32,10 @@ function debug_to_console($data) {
 // Start or resume the session
 session_start();
 
+// Check for the login_required message
+$message = isset($_GET['message']) ? $_GET['message'] : '';
+
+
 // Check if the user is already logged in
 if (isset($_SESSION['user_id'])) {
   // Redirect to the account page
@@ -122,7 +126,7 @@ $conn->close();
           // Display error message for user not found after form submission
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
               if ($result->num_rows == 0) {
-                  echo "<p style='color: red;'>User not found!</p>";
+                  echo "<p style='color: #b01605;'>User not found!</p>";
               }
           }
           ?>
@@ -134,7 +138,7 @@ $conn->close();
           // Display error message for incorrect password after form submission
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
               if ($result->num_rows > 0 && !verifyPassword($password, $row["password_hash"])) {
-                  echo "<p style='color: red;'>Incorrect password!</p>";
+                  echo "<p style='color: #b01605;'>Incorrect password!</p>";
               }
           }
           ?>
@@ -142,6 +146,10 @@ $conn->close();
 
         <input type="submit" name="login" value="Login">
           <?php
+              // Display a message if login is required
+              if ($message === 'login_required') {
+                echo "<p style='color: #b01605;'>Please login first.</p>";
+              }
               // Display success message after successful login and no errors
               if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"]) && !($result->num_rows == 0) && !(($result->num_rows > 0 && !verifyPassword($password, $row["password_hash"])))) {
                   echo "<p style='color: green;'>Login successful!</p>";

@@ -4,3 +4,23 @@
 *::after {
   box-sizing: border-box;
 }
+
+body {
+  font-size: 1.6rem;
+  background-color: rgb(224, 224, 224);
+  color: #000000;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.cart-container ul {
+  display: flex;
+}
+
+.cart-container ul li{
+  padding: 2rem;
+  border: 2px solid;
+  font-size: large;
+}

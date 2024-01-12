@@ -29,6 +29,10 @@ $email = $_SESSION['email'];
 $sql = "SELECT * FROM orders WHERE user_id = $user_id ORDER BY order_date DESC";
 $result = $conn->query($sql);
 
+// Fetch user address from the database
+$address_sql = "SELECT street, number, city, postal_code, country, extra_info FROM orders WHERE user_id = $user_id ORDER BY order_date DESC LIMIT 1";
+$address_result = $conn->query($address_sql);
+
 // You can use this information to fetch more details from the database if needed
 ?>
 
@@ -66,8 +70,13 @@ $result = $conn->query($sql);
         <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
         </ul>
     </header>
-
     <main>
+        
+        <?php 
+        //Get adres
+        if ($address_result && $address_result->num_rows > 0) {
+            $address = $address_result->fetch_assoc();}
+        ?>
         <h1>Welcome, <?php echo $username; ?>!</h1>
         <div class="userinfo">
             <p>Your account information:</p>
@@ -76,6 +85,17 @@ $result = $conn->query($sql);
                 <li>Email: <?php echo $email; ?></li>
                 <!-- Add more details as needed -->
             </ul>
+            <p>Your Address:</p>
+                <ul>
+                    <li>Street: <?php echo $address['street']; ?></li>
+                    <li>Number: <?php echo $address['number']; ?></li>
+                    <li>City: <?php echo $address['city']; ?></li>
+                    <li>Postal Code: <?php echo $address['postal_code']; ?></li>
+                    <li>Country: <?php echo $address['country']; ?></li>
+                    <?php if (!empty($address['extra_info'])) { ?>
+                        <li>Extra Information: <?php echo $address['extra_info']; ?></li>
+                    <?php } ?>
+                </ul>
         </div>
         <h1>Your Orders</h1>
         <?php

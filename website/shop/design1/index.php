@@ -1,3 +1,41 @@
+<?php
+// Start or resume the session
+session_start();
+
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "ietsgents";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Handle adding a test product (product ID 1) to the cart
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_cart"])) {
+  $product_id = 1; // Set the product ID to 1
+  $quantity = $_POST["quantity"];
+
+  // Check if the product is already in the cart
+  if (!isset($_SESSION['cart'])) {
+      $_SESSION['cart'] = array();
+  }
+
+  if (array_key_exists($product_id, $_SESSION['cart'])) {
+      // Product already in the cart, update quantity
+      $_SESSION['cart'][$product_id] += $quantity;
+  } else {
+      // Product not in the cart, add it
+      $_SESSION['cart'][$product_id] = $quantity;
+  }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="nl">
   <head>
@@ -41,7 +79,14 @@
         <img src="hoodie.png" alt="Product Image">
         <p>Introducing the ietsgents Hoodie where simplicity meets style. Crafted with precision, this hoodie embodies clean lines and a sleek design, making it the perfect wardrobe essential for those who appreciate understated elegance. Elevate your casual look with the ietsgents Minimalistic Hoodie and embrace the essence of modern minimalism.</p>
         <p>Price: $19.99</p>
-        <button id="addToCartBtn">Add to Cart</button>
+
+        <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" value="1" min="1" required>
+            <br>
+            <input type="submit" name="add_to_cart" value="Add to Cart">
+        </form>
+
     </div>
     
   </main>

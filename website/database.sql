@@ -15,24 +15,6 @@ CREATE TABLE products (
     PRIMARY KEY (product_id)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci AUTO_INCREMENT=1;
 
--- Cart Table
-CREATE TABLE carts (
-    cart_id INT(11) NOT NULL AUTO_INCREMENT,
-    user_id INT(11),
-    PRIMARY KEY (cart_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
-) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci AUTO_INCREMENT=1;
-
--- CartItem Table
-CREATE TABLE cart_items (
-    cart_item_id INT(11) NOT NULL AUTO_INCREMENT,
-    cart_id INT(11),
-    product_id INT(11),
-    quantity INT NOT NULL,
-    PRIMARY KEY (cart_item_id),
-    FOREIGN KEY (cart_id) REFERENCES carts(cart_id),
-    FOREIGN KEY (product_id) REFERENCES products(product_id)
-) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci AUTO_INCREMENT=1;
 
 -- Orders Table
 CREATE TABLE orders (
@@ -55,3 +37,11 @@ CREATE TABLE order_items (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL auto_increment,
+  `sender` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `added_on` datetime NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci AUTO_INCREMENT = 1;
