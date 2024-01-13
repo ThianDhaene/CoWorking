@@ -92,14 +92,14 @@ if ($result->num_rows > 0) {
                     <p>Quantity: <?php echo $quantity; ?></p>
                     <p>Price: €<?php echo $price; ?></p>
                 </div>
-                <img src="../img/logo1_zonder_achtergrond.png" alt="">
-        <?php
+                <?php
             }
         } else {
             echo "<p>No items in this order.</p>";
         }
-
+        
         ?>
+        <img src="../img/logo1_zonder_achtergrond.png" alt="">
     </main>
 
     <footer>
