@@ -1,3 +1,11 @@
+h1{
+    font-size: 5rem;
+    text-decoration: underline;
+}
+.userinfo li{
+    font-family: "Rubik", sans-serif;
+}
+
 .userinfo ul{
     display: flex;
     list-style-type: none;
@@ -13,7 +21,12 @@
 
 .order {
     margin-bottom: 2rem;
+    padding-left: 2rem;
     border: 2px solid;
     border-radius: 15px;
+}
+.gebruiker,.adres{
+    font-size: 3rem;
+    font-weight: 800;
 }
 

@@ -42,25 +42,27 @@ if ($result->num_rows > 0) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Confirmation</title>
-    <link rel="stylesheet" href="path/to/your/css/style.css">
+    <link rel="stylesheet" href="styleoc.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 <body>
     <header>
-        <!-- Your header content goes here -->
     </header>
-
     <main>
-        <h1>Order Confirmation</h1>
-
-        <p>Thank you for your order!</p>
+    <div class="order">
+        <h1><span class="orderconfirmation">O</span><span class="orderconfirmation">r</span><span class="orderconfirmation">d</span><span class="orderconfirmation">e</span><span class="orderconfirmation">r</span><span class="orderconfirmation"> </span><span class="orderconfirmation"> </span><span class="orderconfirmation"> </span><span class="orderconfirmation"> </span> <span class="orderconfirmation">C</span><span class="orderconfirmation">o</span><span class="orderconfirmation">n</span><span class="orderconfirmation">f</span><span class="orderconfirmation">i</span><span class="orderconfirmation">r</span><span class="orderconfirmation">m</span><span class="orderconfirmation">a</span><span class="orderconfirmation">t</span><span class="orderconfirmation">i</span><span class="orderconfirmation">o</span><span class="orderconfirmation">n</span></h1>
+        <p class="thanks">Thank you for your order!</p>
         
+
         <h2>Order Details</h2>
         <p>Order ID: <?php echo $order['order_id']; ?></p>
         <p>Order Date: <?php echo $order['order_date']; ?></p>
         <p>Total Amount: €<?php echo $order['total_amount']; ?></p>
         <p>Status: <?php echo $order['status']; ?></p>
-        
+
         <h2>Ordered Items</h2>
+    </div>
         <?php
 
         // Fetch order items
@@ -90,6 +92,7 @@ if ($result->num_rows > 0) {
                     <p>Quantity: <?php echo $quantity; ?></p>
                     <p>Price: €<?php echo $price; ?></p>
                 </div>
+                <img src="../img/logo1_zonder_achtergrond.png" alt="">
         <?php
             }
         } else {
@@ -100,7 +103,7 @@ if ($result->num_rows > 0) {
     </main>
 
     <footer>
-        <!-- Your footer content goes here -->
+        <a href="../">Klik hier om terug te gaan</a>
     </footer>
 </body>
 </html>

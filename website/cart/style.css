@@ -1,4 +1,3 @@
-/* Your existing styles */
 *,
 *::before,
 *::after {
@@ -6,21 +5,73 @@
 }
 
 body {
-  font-size: 1.6rem;
   background-color: rgb(224, 224, 224);
-  color: #000000;
-  max-width: 70%;
-  margin: 0 auto;
+  font-family: "Rubik", sans-serif;
+}
+h1{
+  font-size: 10rem;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+.carth1 {
+  -webkit-text-stroke: 0.02em rgb(0, 0, 0);
+  -webkit-text-fill-color: transparent;
+}
+.carth1:hover {
+  cursor: default;
+  -webkit-text-fill-color:rgb(0, 0, 0);
+  -webkit-text-stroke: 0.02em rgb(224, 224, 224);
+}
+.cart-container {
+  background-color: rgb(224, 224, 224);
+  padding: 20px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  margin-top: 3rem;
+  border-radius: 3rem;
+}
+.cart-container p {
+  font-weight: bold;
+  margin-top: 2rem;
+  font-size: 3rem;
+  text-decoration: underline;
+  position: absolute;
+  top: 35rem;
+  right: 35rem;
+}
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #000000;
+  border-radius: 1rem;
+}
+form input[type="submit"] {
+  background-color: #242424;
+  margin-top: 3rem;
+  padding: 3rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 5rem;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+form input[type="submit"]:hover {
+  transform: scale(1.01); /* Scale to 1.2 times on hover */
+}
+b{
+  font-size: 2.5rem;
+  margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
-.cart-container ul {
-  display: flex;
-}
-
-.cart-container ul li{
-  padding: 2rem;
-  border: 2px solid;
-  font-size: large;
-}

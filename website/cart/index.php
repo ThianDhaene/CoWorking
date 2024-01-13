@@ -180,10 +180,9 @@ $product_result = $conn->query($product_sql);
 
   <main>
     <section class="section-inleiding">
-      <h1><span class="about">C</span><span class="about">A</span><span class="about">R</span><span class="about">T</span></h1>
+    <h1><span class="carth1">S</span><span class="carth1">H</span><span class="carth1">O</span><span class="carth1">P</span><span class="carth1">P</span><span class="carth1">I</span><span class="carth1">N</span><span class="carth1">G</span><span class="carth1">&nbsp;</span><span class="carth1">C</span><span class="carth1">A</span><span class="carth1">R</span><span class="carth1">T</span></h1>
     </section>
     <div class="cart-container">
-        <h2>Shopping Cart</h2>
         <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { ?>
             <ul>
                 <?php foreach ($_SESSION['cart'] as $product_id => $quantity) {

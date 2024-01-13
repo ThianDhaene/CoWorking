@@ -94,13 +94,13 @@ if ($address_result && $address_result->num_rows > 0) {
         ?>
         <h1>Welcome, <?php echo $username; ?>!</h1>
         <div class="userinfo">
-            <p>Your account information:</p>
+            <p class="gebruiker">Your account information:</p>
             <ul>
                 <li>Username: <?php echo $username; ?></li>
                 <li>Email: <?php echo $email; ?></li>
                 <!-- Add more details as needed -->
             </ul>
-            <p>Your Address:</p>
+            <p class="adres">Your Address:</p>
                 <ul>
                     <li>Street: <?php echo $street; ?></li>
                     <li>Number: <?php echo $number; ?></li>

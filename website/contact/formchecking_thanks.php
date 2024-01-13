@@ -15,7 +15,7 @@
 	<?php
 
 	echo '<p>Bedankt voor uw bericht ' . htmlentities($name). '! Wij beantwoorden dit zo snel mogelijk.</p>';
-	echo '<img src="../img/logo1_zonder_achtergrond.png" alt="">';
+	echo '<img src="../img/logo1_zonder_achtergrond.png" alt="ietsgents">';
 
 	?>
 </div>

@@ -37,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_cart"])) {
   exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="nl">
   <head>
@@ -77,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_cart"])) {
     <main class="container">
       <div class="product-container">
         <div class="left-column">
-          <img src="tshirt_black.png" alt="Product Image" class="product-image">
+          <img src="totebag.png" alt="Product Image" class="product-image">
         </div>
         <div class="right-column">
           <h2 class="product-title"><span class="about">i</span><span class="about">e</span><span class="about">t</span><span class="about">s</span><span class="about">g</span><span class="about">e</span><span class="about">n</span><span class="about">t</span><span class="about">s</span><span class="about"> t</span><span class="about">-</span><span class="about">s</span><span class="about">h</span><span class="about">i</span><span class="about">r</span><span class="about">t</span></h2>
@@ -90,13 +89,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_to_cart"])) {
               <input type="submit" name="add_to_cart" value="Add to Cart" class="add-to-cart-button">
           </form>
         </div>
-
     </div>
-    
   </main>
-  <footer>
-    
-  </footer>
-  <script src="main.js"></script>
+    <footer>
+      
+    </footer>
   </body>
 </html>
