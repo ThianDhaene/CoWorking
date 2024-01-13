@@ -16,6 +16,9 @@
     padding: 0;
     overflow-x: hidden;
   }
+main{
+  min-height: calc(100vh - 162px);
+}
   header {
     margin-bottom: 1em;
     display: flex;
@@ -83,6 +86,7 @@ h2 {
 h1 {
   font-size: 12rem;
   color: rgb(78, 78, 78);
+  margin-bottom: 0;
 }
 .contact {
   -webkit-text-stroke: 0.02em rgb(0, 0, 0);
@@ -154,9 +158,10 @@ input[type=submit] {
   text-transform: uppercase;
   box-shadow: 0 0 1rem rgba(0,0,0,0.2);
   margin-bottom: 5rem;
+  transition: transform 0.2s ease-in-out;
 }
 input[type=submit]:hover {
-  scale: 1.05;
+  transform: scale(1.05);
   opacity: 75%;
 }
 .container label{
@@ -170,6 +175,7 @@ input[type=submit]:hover {
 }
 .container p{
   font-size: 3rem;
+  margin-bottom: 6rem;
 }
 body .bedanking {
   margin: auto;
