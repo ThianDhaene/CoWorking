@@ -64,13 +64,15 @@ img {
 }
 
 footer {
-    padding: 10px;
+    max-width: 80rem;
     text-align: center;
     width: 100%;
     font-weight: bold;
     font-size: 1.2rem;
     margin-top: 1.5rem;
     transition: transform 0.3s ease-in-out;
+    margin: auto;
+    padding-top: 2rem;
 }
 footer a{
     color: black;
