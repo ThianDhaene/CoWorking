@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS order_items (
     FOREIGN KEY (`product_id`) REFERENCES products(`product_id`)
 );
 
--- Messages table
+-- Messages Table
 CREATE TABLE IF NOT EXISTS `messages` (
   `id` int(11) NOT NULL auto_increment,
   `sender` varchar(255) NOT NULL,
@@ -57,5 +57,18 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `added_on` datetime NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci AUTO_INCREMENT = 1;
+
+
+-- Review Table
+CREATE TABLE IF NOT EXISTS `reviews` (
+    `review_id` INT(11) NOT NULL AUTO_INCREMENT,
+    `user_id` INT(11) NOT NULL,
+    `product_id` INT(11) NOT NULL,
+    `rating` INT(1) NOT NULL,
+    `comment` TEXT,
+    PRIMARY KEY (`review_id`),
+    FOREIGN KEY (`user_id`) REFERENCES users(`user_id`),
+    FOREIGN KEY (`product_id`) REFERENCES products(`product_id`)
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci AUTO_INCREMENT=1;
 
 
