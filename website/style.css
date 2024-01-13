@@ -63,18 +63,6 @@ nav ul a {
   display: inline-block;
 }
 
-nav ul li a::before {
-  content: attr(data-text);
-  -webkit-text-stroke: 1px rgb(75, 75, 75);
-  font-size: 2.4rem;
-  position: absolute;
-  top: 1em;
-  left: 1.5em;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  transition: 1s;
-  width: 0%;
-}
 nav ul li a:hover::before {
   width: 100%;
 }
