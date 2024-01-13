@@ -93,10 +93,7 @@ h1 {
   font-size: 12rem;
   color: rgb(78, 78, 78);
 }
-.about {
-  -webkit-text-stroke: 0.02em rgb(0, 0, 0);
-  -webkit-text-fill-color: transparent;
-}
+
 
 .logo:active {
   rotate: 270deg;
@@ -131,6 +128,11 @@ footer p {
 .socials a {
   padding: 0;
 }  
+
+.about {
+  -webkit-text-stroke: 0.02em rgb(0, 0, 0);
+  -webkit-text-fill-color: transparent;
+}
 .about:hover {
   cursor: default;
   -webkit-text-fill-color:rgb(0, 0, 0);
