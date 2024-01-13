@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is not an admin, redirect to the login page
 if (!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']) {
-    header("Location: ../login.php");
+    header("Location: ../login");
     exit();
 }
 
@@ -68,6 +68,7 @@ $orders_result = $conn->query($orders_sql);
         </tr>
     </thead>
     <tbody>
+        <hr>
         <?php
         while ($order = $orders_result->fetch_assoc()) {
             $order_id = $order['order_id'];
