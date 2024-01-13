@@ -157,6 +157,7 @@ if ($address_result && $address_result->num_rows > 0) {
                     ?>
 
                             <div class="order-item">
+                                <hr>
                                 <p>Product: <?php echo $product['name']; ?></p>
                                 <p>Quantity: <?php echo $quantity; ?></p>
                                 <p>Price: €<?php echo $price; ?></p>
