@@ -43,36 +43,49 @@ if (isset($_SESSION['user_id'])) {
   exit();
 }
 
+
+
 // User login
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $sql = "SELECT * FROM users WHERE username = '$username'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (verifyPassword($password, $row["password_hash"])) {
-            // Start a session (if not started already)
-            session_start();
-
-            // Store user information in session (you can store more information as needed)
-            $_SESSION['user_id'] = $row['user_id'];
-            $_SESSION['username'] = $row['username'];
-            $_SESSION['email'] = $row['email'];
-
-            // Redirect to the account page
-            header("Location: ../account");
-            exit();
-
-            debug_to_console("Login successful!");
-        } else {
-          debug_to_console("Incorrect password");
-        }
+    // Check if the entered credentials match the admin credentials
+    if ($_POST['username'] == 'admin' && $_POST['password'] == 'admin') {
+      // Admin login successful
+      // You might want to set a session variable or take any specific action here
+      $_SESSION['is_admin'] = true;
+      header("Location: ../admin");
+      exit();
     } else {
-        debug_to_console("User not found!");
-    }
+      $sql = "SELECT * FROM users WHERE username = '$username'";
+      $result = $conn->query($sql);
+
+      if ($result->num_rows > 0) {
+          $row = $result->fetch_assoc();
+          if (verifyPassword($password, $row["password_hash"])) {
+              // Start a session (if not started already)
+              session_start();
+
+              // Store user information in session (you can store more information as needed)
+              $_SESSION['user_id'] = $row['user_id'];
+              $_SESSION['username'] = $row['username'];
+              $_SESSION['email'] = $row['email'];
+
+              // Redirect to the account page
+              header("Location: ../account");
+              exit();
+
+              debug_to_console("Login successful!");
+          } else {
+            debug_to_console("Incorrect password");
+          }
+      } else {
+          debug_to_console("User not found!");
+      }
+      }
+
+    
 }
 
 $conn->close();
@@ -86,7 +99,7 @@ $conn->close();
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ietsgents | about</title>
+  <title>ietsgents | Login</title>
   <link rel="icon" href="../img/logo2.png" />
   <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
   <link rel="stylesheet" href="../about/style.css" />
