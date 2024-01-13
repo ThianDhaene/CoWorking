@@ -38,9 +38,17 @@ h1{
 }
 .cart-container ul {
   padding-left: 0;
-  display: inline-flex;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap:3rem;
 }
+
+.cart-container ul li{
+  align-items: center;
+  padding-left: 0;
+  display: flex;
+}
+
 form label {
   display: block;
   margin-bottom: 1rem;
@@ -80,3 +88,21 @@ b{
   padding: 0;
 }
 
+.remove-item-form {
+  display: inline-block;
+  margin-left: 5rem;
+}
+
+.remove-item-button {
+  background-color: #ff5555; /* Red background color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.remove-item-button:hover {
+  background-color: #ff3333; /* Darker red on hover */
+}

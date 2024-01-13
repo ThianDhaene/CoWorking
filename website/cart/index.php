@@ -139,6 +139,16 @@ function calculateTotalAmount($conn) {
   return 0;
 }
 
+// Handle item removal
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["remove_item"])) {
+  $remove_product_id = $_POST["remove_product_id"];
+  
+  // Check if the product is in the cart and remove it
+  if (isset($_SESSION['cart'][$remove_product_id])) {
+      unset($_SESSION['cart'][$remove_product_id]);
+  }
+}
+
 // Fetch products from the database
 $product_sql = "SELECT * FROM products";
 $product_result = $conn->query($product_sql);
@@ -185,7 +195,7 @@ $product_result = $conn->query($product_sql);
     </section>
     <div class="cart-container">
         <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { ?>
-            <ul>
+          <ul>
                 <?php foreach ($_SESSION['cart'] as $product_id => $quantity) {
                     // Fetch product details
                     $product_sql = "SELECT * FROM products WHERE product_id = $product_id";
@@ -195,7 +205,12 @@ $product_result = $conn->query($product_sql);
                         $product_name = $product['name'];
                         ?>
                         <li>
-                          <b><?php echo "Product: $product_name, Quantity: $quantity"; ?></b>
+                            <b><?php echo "$product_name, Quantity: $quantity"; ?></b>
+                            <!-- Add a form to remove the item -->
+                            <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="remove-item-form">
+                                <input type="hidden" name="remove_product_id" value="<?php echo $product_id; ?>">
+                                <button type="submit" name="remove_item" class="remove-item-button">Remove</button>
+                            </form>
                         </li>
                     <?php
                     } else {
