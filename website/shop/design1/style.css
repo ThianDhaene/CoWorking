@@ -1,4 +1,3 @@
-/* Add your general styles here */
 body {
     font-family: 'Rubik', sans-serif;
 }
@@ -11,7 +10,7 @@ body {
 .reveiws{
     display: flex;
 }
-/* Main Content Styles */
+
 .product-container {
     margin-top: 50px;
     display: flex;
@@ -30,6 +29,7 @@ body {
 .product-image {
     max-width: 100%;
     margin-bottom: 20px;
+    border-radius: 3rem;
 }
 
 .product-description {
@@ -56,8 +56,14 @@ body {
     scale: 1.2;
     width: 50px;
     margin-left: 10px;
+    border-radius: 1rem;
+    border-color: rgb(177, 177, 177);
+    margin-bottom: 2rem;
 }
-
+.quantity-input:hover,:focus {
+    border-color: #000000;
+}
+  
 .add-to-cart-button {
     background-color: transparent;
     color: black;
@@ -153,9 +159,10 @@ body {
 
 .review {
     max-width: auto;
-    margin: 2rem;
     border-radius: 15px;
     border: 1px solid;
     padding: 1rem;
+    padding-left: 3rem;
+    margin-bottom: 3rem;
 }
 

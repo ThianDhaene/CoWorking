@@ -29,4 +29,9 @@ h1{
     font-size: 3rem;
     font-weight: 800;
 }
+hr{
+    border: 0.1rem solid #838383;
+    max-width: 40rem;
+    margin-left: 0;
+}
 

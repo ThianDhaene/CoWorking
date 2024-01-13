@@ -67,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["checkout"])) {
                 $price = $product['price'];
 
                 $order_item_sql = "INSERT INTO order_items (order_id, product_id, quantity, price) VALUES ('$order_id', '$product_id', '$quantity', '$price')";
+
                 $conn->query($order_item_sql);
             } else {
                 echo "Error: Product with ID $product_id not found.";
