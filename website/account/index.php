@@ -49,6 +49,16 @@ if ($address_result && $address_result->num_rows > 0) {
 
 // You can use this information to fetch more details from the database if needed
 
+
+// Check if the logout button is clicked
+if (isset($_POST['logout'])) {
+    // Destroy the session
+    session_destroy();
+
+    // Redirect to the login page after logout
+    header("Location: ../login");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -73,12 +83,12 @@ if ($address_result && $address_result->num_rows > 0) {
         <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
         </a>
         <nav>
-        <ul>
-            <li><a href="../" data-text="HOME">Home</a></li>
-            <li><a href="../about" data-text="ABOUT">About</a></li>
-            <li><a href="../shop" data-text="SHOP">Shop</a></li>
-            <li><a href="../contact" data-text="CONTACT">Contact</a></li>
-        </ul>
+            <ul>
+                <li><a href="../" data-text="HOME">Home</a></li>
+                <li><a href="../about" data-text="ABOUT">About</a></li>
+                <li><a href="../shop" data-text="SHOP">Shop</a></li>
+                <li><a href="../contact" data-text="CONTACT">Contact</a></li>
+            </ul>
         </nav>
         <ul>
         <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
@@ -86,7 +96,6 @@ if ($address_result && $address_result->num_rows > 0) {
         </ul>
     </header>
     <main>
-        
         <?php 
         //Get adres
         if ($address_result && $address_result->num_rows > 0) {
@@ -112,6 +121,9 @@ if ($address_result && $address_result->num_rows > 0) {
                     <?php } ?>
                 </ul>
         </div>
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <input type="submit" name="logout" value="Logout">
+        </form>
         <h1>Your Orders</h1>
         <?php
         // Check if there are orders
