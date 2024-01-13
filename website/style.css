@@ -118,9 +118,10 @@ p {
   border-radius: 3em;
   overflow: hidden;
   display: inline-block;
+  transition: transform .2s ease-in-out;
 }
 .kleding-home-li:hover {
-  scale: 1.01;
+  transform: scale(1.03);
 }
 
 .kleding-change {
@@ -186,24 +187,19 @@ h3.kleding-change-long {
   font-weight: bold;
   border: 0.2em solid rgb(63, 63, 63);
   border-radius: 30em;
+  transition: transform 0.2s ease-in-out;
 }
 .btn-about::after {
   content: ">>";
-  display: inline-block;
   margin-left: 0.25em;
 }
-.btn-about:hover::after {
-  color:rgb(255, 255, 255);
-  transform: translateX(5px);
-  transition: transform 0.2s ease;
-}
+
 .btn-about:hover {
-  display: inline-block;
   color:rgb(255, 255, 255);
   background-color: rgb(63, 63, 63);
-  border: 0.1em solid rgb(255, 255, 255);
-  scale: 102%;
-  transition: scale 0.2s ease-in-out;
+  border: 0.2em solid rgb(255, 255, 255);
+  transform: scale(1.05);
+  
 }
 
 footer {

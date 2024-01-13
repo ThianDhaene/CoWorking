@@ -51,6 +51,7 @@ nav {
   height: 50vh;
   background-color: #222;
   border-radius: 2em;
+  transition: transform .2s ease-in-out;
 }
 .projects-all ul li p,
 .projects-all ul li h3 {
@@ -91,7 +92,7 @@ nav {
   background-color: rgb(221, 221, 221);
 }
 .projects-all ul li:hover {
-  scale: 1.02;
+  transform: scale(1.03);
 }
 .projects-all ul li:hover a .btn {
   visibility: visible;
