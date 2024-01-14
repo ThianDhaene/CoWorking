@@ -79,6 +79,7 @@ if (isset($_POST['btnSubmit'])) {
     <title>ietsgents | contact</title>
     <link rel="icon" href="../img/logo2.png" />
     <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../contact/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -86,52 +87,51 @@ if (isset($_POST['btnSubmit'])) {
 </head>
 
 <body>
-    <header>
+    <div class="container">
+      <header>
         <a href="../">
-            <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="ietsgents">
+          <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
         </a>
         <nav>
-            <ul>
-                <li><a href="../" data-text="HOME">Home</a></li>
-                <li><a href="../about" data-text="ABOUT">About</a></li>
-                <li><a href="../shop" data-text="SHOP">Shop</a></li>
-                <li><a href="./" data-text="CONTACT">CONTACT</a></li>
-            </ul>
+          <ul>
+            <li><a href="../" data-text="HOME">Home</a></li>
+            <li><a href="../about" data-text="ABOUT">About</a></li>
+            <li><a href="../shop" data-text="SHOP">Shop</a></li>
+            <li><a href="./" data-text="CONTACT">Contact</a></li> 
+          </ul>
         </nav>
         <ul>
-            <li><a href="../login"><img src="../img/account.webp" class="account" alt="Account" ></a></li>
-            <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt="Winkelmand"></a></li>
-           </ul>
-    </header>
+          <li><a href="../login"><img src="../img/account.webp" class="account" alt="" ></a></li>
+          <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
+        </ul>
+      </header>
+    </div>
     <main>
-        <section class="section-inleiding">
-            <h1><span class="contact">C</span><span class="contact">O</span><span class="contact">N</span><span class="contact">T</span><span class="contact">A</span><span class="contact">C</span><span class="contact">T</span></h1>
-          </section>
-          <div class="container">
-              <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <p class="message">Heeft u vragen of een opmerking? Aarzel niet om ons te contacteren. Wij zullen u dan zo spoedig mogelijk verder helpen.</p>
-                
-                <div>
-                  <label for="name">Voornaam</label>
-                  <input type="text" id="name" name="name" value="<?php echo htmlentities($name); ?>" class="input-text"/>
-                  <span class="message error"><?php echo $msgName; ?></span>
-                </div>
-              
-                <div>
-                  <label for="email">E-mail</label>
-                  <input type="text" id="email" name="email" value="<?php echo htmlentities($email); ?>" class="input-text"/>
-                  <span class="message error"><?php echo $msgEmail; ?></span>
-                </div>
+        <h1><span class="contact">C</span><span class="contact">O</span><span class="contact">N</span><span class="contact">T</span><span class="contact">A</span><span class="contact">C</span><span class="contact">T</span></h1>
+        <div class="contactcontainer">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+              <p class="message">Do you have any questions or remarks for us. Leave a message for us!</p>
+              <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="<?php echo htmlentities($name); ?>" class="input-text"/>
+                <span class="message error"><?php echo $msgName; ?></span>
+              </div>
+            
+              <div>
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" value="<?php echo htmlentities($email); ?>" class="input-text"/>
+                <span class="message error"><?php echo $msgEmail; ?></span>
+              </div>
 
-                <div>
-                  <label for="message">Bericht</label>
-                  <textarea name="message" id="message" rows="5" cols="40"><?php echo htmlentities($message); ?></textarea>
-                  <span class="message error"><?php echo $msgMessage; ?></span>
-                </div>
+              <div>
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="5" cols="40"><?php echo htmlentities($message); ?></textarea>
+                <span class="message error"><?php echo $msgMessage; ?></span>
+              </div>
 
-                <input type="submit" id="btnSubmit" name="btnSubmit" value="Sturen" class="button"/>
-            </form>
-          </div>
+              <input type="submit" id="btnSubmit" name="btnSubmit" value="Send" class="button"/>
+          </form>
+        </div>
     </main>
     <footer>
         <div class="footer-p">
