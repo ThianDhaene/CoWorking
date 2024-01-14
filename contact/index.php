@@ -17,7 +17,7 @@ try {
     $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASS);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo 'Verbindingsfout: ' . $e->getMessage();
+    echo 'Connection error: ' . $e->getMessage();
     exit;
 }
 $name = isset($_POST['name']) ? (string)$_POST['name'] : '';
@@ -33,20 +33,20 @@ if (isset($_POST['btnSubmit'])) {
     $allOk = true;
 
     if (trim($name) === '') {
-      $msgName = 'Gelieve een naam in te voeren';
+      $msgName = 'Please enter a name';
       $allOk = false;
     }
     // name not empty
     if (trim($email) === '') {
-        $msgEmail = 'Gelieve een E-mail in te voeren';
+        $msgEmail = 'Please enter an email';
         $allOk = false;
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $msgEmail = 'Ongeldig e-mailadres formaat';
+        $msgEmail = 'Invalid email address format';
         $allOk = false;
   }
 
     if (trim($message) === '') {
-        $msgMessage = 'Gelieve een boodschap in te voeren';
+        $msgMessage = 'Please enter a message';
         $allOk = false;
     }
 

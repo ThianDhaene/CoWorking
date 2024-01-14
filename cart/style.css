@@ -55,6 +55,9 @@ h1{
   margin-right: 2rem;
   border-radius: 10px;
 }
+.cart-container ul li img:hover{
+  
+}
 
 
 form label {
@@ -81,14 +84,14 @@ form input[type="submit"] {
   padding: 3rem;
   color: #fff;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
   border-radius: 5rem;
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 800;
+  transition: transform 0.3s ease-in-out;
 }
 form input[type="submit"]:hover {
-  transform: scale(1.01); /* Scale to 1.2 times on hover */
+  transform: scale(1.01);
 }
 b{
   font-size: 2.5rem;
@@ -98,20 +101,23 @@ b{
 
 .remove-item-form {
   display: inline-block;
-  margin-left: 5rem;
+  margin-left: 3rem;
 }
 
 .remove-item-button {
-  background-color: #ff5555; /* Red background color */
-  color: #fff; /* White text color */
-  border: none;
+  background-color: #ff1900;
+  color: #fff;
   padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  border-radius: 3px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+}
+.remove-item-button:hover {
+  background-color: #da2b17;
+  transform: scale(1.02);
 }
 
-.remove-item-button:hover {
-  background-color: #ff3333; /* Darker red on hover */
-}
 

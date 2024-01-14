@@ -21,7 +21,6 @@ h1 {
   -webkit-text-stroke: 0.02em rgb(0, 0, 0);
   -webkit-text-fill-color: transparent;
 }
-
 .logo:active {
   rotate: 270deg;
   transition: rotate 0.15s ease-in-out;
@@ -70,7 +69,6 @@ input[type=submit] {
   font-weight: bold;
   text-transform: uppercase;
   box-shadow: 0 0 1rem rgba(0,0,0,0.2);
-  margin-bottom: 5rem;
   transition: transform 0.2s ease-in-out;
 }
 input[type=submit]:hover {
@@ -91,7 +89,6 @@ input[type=submit]:hover {
   margin-bottom: 6rem;
 }
 
-/*CSS thanks page*/
 body .bedanking {
   margin: auto;
   padding: 0 1rem;

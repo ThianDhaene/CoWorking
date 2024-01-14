@@ -1,3 +1,16 @@
 main{
     min-height: calc(100vh - 120px);
-  }
+}
+.container h1{
+  font-size: 6rem;
+  font-weight: 800;
+}
+.error404 {
+  -webkit-text-stroke: 0.02em rgb(0, 0, 0);
+  -webkit-text-fill-color: transparent;
+}
+.error404:hover {
+  cursor: default;
+  -webkit-text-fill-color:rgb(0, 0, 0);
+  -webkit-text-stroke: 0.02em rgb(224, 224, 224);
+}
