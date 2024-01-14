@@ -111,7 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
     }
 
     $user_id = $_SESSION['user_id'];
-    $product_id = 1;
     $rating = $_POST["rating"];
     $comment = $_POST["comment"];
 
