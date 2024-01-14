@@ -171,23 +171,25 @@ $product_result = $conn->query($product_sql);
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <a href="../">
-      <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
-    </a>
-    <nav>
+  <div class="container">
+    <header>
+      <a href="../">
+        <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../" data-text="HOME">Home</a></li>
+          <li><a href="../about" data-text="ABOUT">About</a></li>
+          <li><a href="../shop" data-text="SHOP">Shop</a></li>
+          <li><a href="../contact" data-text="CONTACT">Contact</a></li>
+        </ul>
+      </nav>
       <ul>
-        <li><a href="../" data-text="HOME">Home</a></li>
-        <li><a href="../about" data-text="ABOUT">About</a></li>
-        <li><a href="../shop" data-text="SHOP">Shop</a></li>
-        <li><a href="../contact" data-text="CONTACT">Contact</a></li>
+        <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
+        <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
       </ul>
-    </nav>
-    <ul>
-      <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
-      <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
-    </ul>
-  </header>
+    </header>
+  </div>
 
   <main>
     <section class="section-inleiding">

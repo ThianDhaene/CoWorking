@@ -71,30 +71,31 @@ if (isset($_POST['logout'])) {
     <link rel="icon" href="../img/logo2.png" />
     <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../login/style.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header class=>
-        <a href="../">
-        <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
-        </a>
-        <nav>
+    <div class="container">
+        <header>
+            <a href="../">
+            <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../" data-text="HOME">Home</a></li>
+                    <li><a href="../about" data-text="ABOUT">About</a></li>
+                    <li><a href="../shop" data-text="SHOP">Shop</a></li>
+                    <li><a href="../contact" data-text="CONTACT">Contact</a></li>
+                </ul>
+            </nav>
             <ul>
-                <li><a href="../" data-text="HOME">Home</a></li>
-                <li><a href="../about" data-text="ABOUT">About</a></li>
-                <li><a href="../shop" data-text="SHOP">Shop</a></li>
-                <li><a href="../contact" data-text="CONTACT">Contact</a></li>
+            <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
+            <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
             </ul>
-        </nav>
-        <ul>
-        <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
-        <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
-        </ul>
-    </header>
+        </header>
+    </div>
     <main>
         <?php 
         //Get adres

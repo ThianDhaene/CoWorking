@@ -52,8 +52,7 @@ body {
     background-color: #f44336;
   }
   
-  /* Add padding to containers */
-  .container {
+  .logincontainer {
     padding: 16px;
     font-family: 'Rubik', open-sans;
     font-size: 14px;
