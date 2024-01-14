@@ -215,7 +215,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
                       foreach ($reviews as $review):
                   ?>
                           <div class="review">
-                              <p><strong>User:</strong> <?php echo $review['username']; ?></p>
+                          <p><strong><?php echo $review['username'];?></strong></p>
                               <p><strong>Rating:</strong> <?php echo generateStars($review['rating']); ?></p>
                               <p><strong>Comment:</strong> <?php echo $review['comment']; ?></p>
                           </div>
