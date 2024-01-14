@@ -10,7 +10,6 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "ietsgents";
-
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
@@ -141,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
     <link rel="icon" href="../../img/logo2.png" />
     <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../style.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../productstyle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
@@ -168,14 +167,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
     <main class="container">
         <div class="product-container">
             <div class="left-column">
-                <img src="hoodie.png" alt="Product Image" class="product-image">
+                <img src="img.png" alt="Product Image" class="product-image">
             </div>
             <div class="right-column">
                 <h2 class="product-title"><span class="about">i</span><span class="about">e</span><span class="about">t</span><span class="about">s</span><span class="about">g</span><span class="about">e</span><span class="about">n</span><span class="about">t</span><span class="about">s</span><span class="about"> h</span><span class="about">o</span><span class="about">o</span><span class="about">d</span><span class="about">i</span><span class="about">e</span></h2>
                 <div class="average-rating">
                           <p><?php echo generateStars($averageRating); ?></p>
                 </div>
-                <p class="product-price">Price: $19.99</p>
+                <span class="product-price" data-original-price="25.00">49.99 EUR</span>
 
                 <p class="product-description">Introducing the ietsgents Hoodie where simplicity meets style. Crafted with precision, this hoodie embodies clean lines and a sleek design, making it the perfect wardrobe essential for those who appreciate understated elegance. Elevate your casual look with the ietsgents Minimalistic Hoodie and embrace the essence of modern minimalism.</p>
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="add-to-cart-form">

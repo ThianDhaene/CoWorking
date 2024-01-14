@@ -17,9 +17,14 @@ CREATE TABLE IF NOT EXISTS products (
 
 INSERT INTO products (`product_id`, `name`, `price`)
 VALUES
-('1', 'Product 1',  9.99),
-('2', 'Product 2', 29.99),
-('3', 'Product 3', 39.99);
+('1', 'ietsgents hoodie',  49.99),
+('2', 'ietsgents tshirt', 19.99),
+('3', 'ietsgents totebag', 9.99),
+('4', 'ietsgents pants', 39.99),
+('5', 'ietsgents beanie', 24.99),
+('6', 'ietsgents sock', 24.99),
+('7', 'ietsgents lighter', 4.99),
+('8', 'ietsgents bottle', 19.99);
 
 -- Orders Table
 CREATE TABLE IF NOT EXISTS orders (
