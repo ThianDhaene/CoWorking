@@ -173,6 +173,11 @@ h3.kleding-change-long {
  color: rgba(63, 63, 63, 0.363);
  font-style: italic;
 }
+.easteregg {
+  text-decoration: none;
+  color: rgba(63, 63, 63, 0.363);
+  font-style: italic;
+}
 .btn-about {
   margin-bottom: 50px;
   margin-top: 30px;

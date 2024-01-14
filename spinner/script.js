@@ -1,32 +1,34 @@
-let Spinner = new Audio('../img/spinner.mp3');
-Spinner.addEventListener('canplaythrough', function () {
+const wheel = document.querySelector('.wheel');
+const startButton = document.querySelector('.button');
+const arrow = document.querySelector('.pin');
+
+let deg = 0;
+
+startButton.addEventListener('click', () => {
+	startButton.style.pointerEvents = 'none';
+	deg = Math.floor(5000 + Math.random() * 5000);
+	wheel.style.transition = 'all 9s ease-out';
+	wheel.style.transform = `rotate(${deg}deg)`;
+	wheel.classList.add('blur');
+	playSound()
 });
 
-function rotateFunction() {
-  Spinner.play();
+wheel.addEventListener('transitionend', () => {
+	wheel.classList.remove('blur')
+	startButton.style.pointerEvents = 'none';
+	wheel.style.transition = 'none';
+	const actualDeg = deg % 360;
+	wheel.style.transform = `rotate(${actualDeg}deg)`;
+	arrow.classList.add('bounce')
+	update();
+	draw();
+});
 
-  var min = 1024;
-  var max = 9999;
-  var deg = Math.floor(Math.random() * (max - min)) + min;
+let audio = new Audio('../img/spinner.mp3')
 
-  document.getElementById('box').style.transform = "rotate(" + deg + "deg)";
-  var element = document.getElementById('mainbox');
-  element.classList.remove('animate');
-  
-  setTimeout(function () {
-    element.classList.add('animate');
-  }, 5000);
-
-  setTimeout(function () {
-    var newTextElement = document.createElement('p');
-    newTextElement.textContent = 'Congratulations! You won something!';
-    newTextElement.id = 'resultText';
-    document.body.appendChild(newTextElement);
-  }, 12000);
-
-  // Pause and reload the audio after the congratulations message
-  setTimeout(function () {
-    Spinner.pause();
-    Spinner.load();
-  }, 12000);
+function playSound()
+{
+        audio.currentTime = 0;
+        audio.play();
+        audio.loop = false;
 }
