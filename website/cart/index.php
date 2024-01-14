@@ -203,8 +203,26 @@ $product_result = $conn->query($product_sql);
                     if ($product_result && $product_result->num_rows > 0) {
                         $product = $product_result->fetch_assoc();
                         $product_name = $product['name'];
+
+                        $product_name_lower = strtolower($product_name);
+                        $product_images = array(
+                          'ietsgents hoodie' => '../shop/ietsgentshoodie/img.png',
+                          'ietsgents beanie' => '../shop/ietsgentsbeanie/img.png',
+                          'ietsgents bottle' => '../shop/ietsgentsbottle/img.png',
+                          'ietsgents lighter' => '../shop/ietsgentslighter/img.png',
+                          'ietsgents pants' => '../shop/ietsgentspants/img.png',
+                          'ietsgents sock' => '../shop/ietsgentssock/img.png',
+                          'ietsgents totebag' => '../shop/ietsgentstotebag/img.png',
+                          'ietsgents tshirt' => '../shop/ietsgentstshirt/img.png'
+                        );
+
+                        if (array_key_exists($product_name_lower, $product_images)) {
+                        // Use the corresponding image path if the product name is found
+                        $image_path = $product_images[$product_name_lower];
                         ?>
+                        
                         <li>
+                            <img src="<?php echo $image_path; ?>" alt="Product Image">
                             <b><?php echo "$product_name, Quantity: $quantity"; ?></b>
                             <!-- Add a form to remove the item -->
                             <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="remove-item-form">
@@ -217,7 +235,7 @@ $product_result = $conn->query($product_sql);
                         // Handle the situation where the product is not found
                         echo "Error: Product with ID $product_id not found.";
                     }
-                } ?>
+                }} ?>
             </ul>
             <p>Total Amount: €<?php echo calculateTotalAmount($conn); ?></p>
             <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
@@ -261,7 +279,5 @@ $product_result = $conn->query($product_sql);
       </ul>
     </nav>
   </footer>
-
-  <script src="cart.js" defer></script>
 </body>
 </html>

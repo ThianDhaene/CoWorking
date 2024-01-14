@@ -49,6 +49,13 @@ h1{
   display: flex;
 }
 
+.cart-container ul li img{
+  width: 20rem;
+  margin-right: 2rem;
+  border-radius: 10px;
+}
+
+
 form label {
   display: block;
   margin-bottom: 1rem;
