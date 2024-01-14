@@ -33,6 +33,31 @@ if ($conn->connect_error) {
 // Fetch orders from the database
 $orders_sql = "SELECT * FROM orders";
 $orders_result = $conn->query($orders_sql);
+
+//get order label
+if (isset($_POST['print_label'])) {
+    // Retrieve order details from the database based on the order_id
+    $order_id = $_POST['order_id'];
+    $user_id = $_POST['user_id'];
+
+    // Fetch order details similar to how you did in the admin page
+    // ...
+
+    // Now, generate the label content
+    $label_content = "Order Label Content: \n";
+    $label_content .= "Order ID: " . $order_id . "\n";
+    $label_content .= "User ID: " . $user_id . "\n";
+    // Include other relevant order details
+
+    // Output the label content
+    header("Content-Type: text/plain");
+    header("Content-Disposition: attachment; filename=order_label.txt");
+    echo $label_content;
+    exit();
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -77,6 +102,7 @@ $orders_result = $conn->query($orders_sql);
                 <th>Country</th>
                 <th>Extra Info</th>
                 <th>Change Status</th>
+                <th>Print Label</th>
             </tr>
         </thead>
         <tbody>
@@ -130,6 +156,9 @@ $orders_result = $conn->query($orders_sql);
                             <input type="submit" name="update_status" value="Update">
                         </form>
                     </td>
+                    <td>
+                        <button class="print-button" onclick="printOrderLabel(<?php echo $order_id; ?>)">Print Order Label</button>
+                    </td>
                 </tr>
             <?php } ?>
         </tbody>
@@ -138,5 +167,16 @@ $orders_result = $conn->query($orders_sql);
     <footer>
         
     </footer>
+    <script>
+        function printOrderLabel(orderId) {
+            // You can customize this URL to point to a script that generates the order label
+            var printUrl = 'generate_order_label.php?order_id=' + orderId;
+
+            // Open a new window and print the order label
+            var printWindow = window.open(printUrl, '_blank');
+            printWindow.print();
+        }
+        </script>
+
     </body>
 </html>

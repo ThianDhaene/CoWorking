@@ -9,3 +9,22 @@ th,td{
 tr{
     padding-top: 2rem;
 }
+
+.orderlabel {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    flex-direction: column;
+}
+
+.orderlabel img{
+    margin: auto;
+    width: 20rem;
+}
+
+.orderlabelinfo {
+    border: 1px solid;
+    border-radius: 5px;
+    padding-left: 2rem;
+    align-items: center;
+}
