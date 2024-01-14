@@ -6,7 +6,8 @@
     <title>404</title>
     <link rel="icon" href="./img/logo2.png" />
     <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/coworking/style.css" />
+    <link rel="stylesheet" href="/coworking/errorpages/error.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet"/>
@@ -14,31 +15,45 @@
     <body>
         <div class="container">
             <header>
-                <a href="../">
-                  <img src="img/logo2_zonder_achtergrond.png" class="logo" alt="">
+                <a href="/coworking">
+                  <img src="/coworking/img/logo2_zonder_achtergrond.png" class="logo" alt="">
                 </a>
                 <nav>
                   <ul>
-                    <li><a href="./" data-text="HOME">Home</a></li>
-                    <li><a href="about" data-text="ABOUT">About</a></li>
-                    <li><a href="shop" data-text="SHOP">Shop</a></li>
-                    <li><a href="contact" data-text="CONTACT">Contact</a></li>
+                    <li><a href="/coworking" data-text="HOME">Home</a></li>
+                    <li><a href="/coworking/about" data-text="ABOUT">About</a></li>
+                    <li><a href="/coworking/shop" data-text="SHOP">Shop</a></li>
+                    <li><a href="/coworking/contact" data-text="CONTACT">Contact</a></li>
                   </ul>
                 </nav>
                 <ul>
-                  <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
-                  <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
+                  <li><a href="/coworking//login"><img src="/coworking//img/account.webp" class="account" alt=""></a></li>
+                  <li><a href="/coworking//cart"><img src="/coworking//img/winkelmandje.webp" class="cart" alt=""></a></li>
                 </ul>
               </header>
         </div>
         <main>
             <div class="container">
-                <img src="https://example.com/images/404-image.jpg" alt="404 Error Image">
+                <!-- <img src="https://example.com/images/404-image.jpg" alt="404 Error Image"> -->
                 <h1>404 - Page Not Found</h1>
                 <p>Oops! Looks like the page you're looking for doesn't exist.</p>
                 <p>Don't worry, let's get you back on track:</p>
                 <a href="./"><p>Go to the Home Page</p></a>
             </div>
         </main>
+        <footer>
+          <div class="footer-p">
+            <p>&copy; ietsgents 2023</p>
+          </div>
+          <nav class="socials">
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/ietsgents/" target="_blank"
+                  ><img src="./img/instagram_logo.png" alt=""
+                /></a>
+              </li>
+            </ul>
+          </nav>
+        </footer>
     </body>
 </html>
