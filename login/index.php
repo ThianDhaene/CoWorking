@@ -175,5 +175,19 @@ $conn->close();
     <div class="container logincontainer" style="background-color: transparent">
           <span class="psw"><a href="../register">Create an account</a></span>
     </div>
-  </main>
+    </main>
+    <footer>
+          <div class="footer-p">
+            <p>&copy; ietsgents 2023</p>
+          </div>
+          <nav class="socials">
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/ietsgents/" target="_blank"
+                  ><img src="./img/instagram_logo.png" alt=""
+                /></a>
+              </li>
+            </ul>
+          </nav>
+        </footer>
   </body>

@@ -13,7 +13,9 @@ body {
     text-align: center;
 
   }
-
+  main{
+    min-height: calc(100vh - 120px);
+  }
   
   input[type=text], input[type=password] {
     width: 100%;
