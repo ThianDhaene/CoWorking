@@ -8,6 +8,8 @@ th,td{
 
 tr{
     padding-top: 2rem;
+    text-align: center;
+
 }
 
 .orderlabel {
@@ -27,4 +29,22 @@ tr{
     border-radius: 5px;
     padding-left: 2rem;
     align-items: center;
+}
+.logoutbutton{
+    background-color: #000000;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+  margin-top: 2rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.logoutbutton:hover {
+    transform: scale(1.05);
 }

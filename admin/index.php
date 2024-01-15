@@ -77,7 +77,7 @@ if (isset($_POST['print_label'])) {
 <body>
     <header>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <input type="submit" name="logout" value="Logout">
+            <input type="submit" name="logout" value="Logout" class="logoutbutton">
         </form>
     </header>
     <main>

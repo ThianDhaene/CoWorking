@@ -73,6 +73,7 @@ footer {
     transition: transform 0.3s ease-in-out;
     margin: auto;
     padding-top: 2rem;
+    margin-bottom: 5rem;
 }
 footer a{
     color: black;
