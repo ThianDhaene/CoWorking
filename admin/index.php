@@ -81,6 +81,9 @@ if (isset($_POST['print_label'])) {
         </form>
     </header>
     <main>
+        <div class="container">
+            
+        </div>
         <h1>Admin Dashboard</h1>
 
         <!-- Display Orders -->
@@ -95,11 +98,7 @@ if (isset($_POST['print_label'])) {
                 <th>Order Date</th>
                 <th>Status</th>
                 <th>Products</th>
-                <th>Street</th>
-                <th>Number</th>
-                <th>City</th>
-                <th>Postal Code</th>
-                <th>Country</th>
+                <th>Address</th>
                 <th>Extra Info</th>
                 <th>Change Status</th>
                 <th>Print Label</th>
@@ -137,11 +136,7 @@ if (isset($_POST['print_label'])) {
                         ?>
                     </td>
                     <!-- Display Address Information -->
-                    <td><?php echo $order['street']; ?></td>
-                    <td><?php echo $order['number']; ?></td>
-                    <td><?php echo $order['city']; ?></td>
-                    <td><?php echo $order['postal_code']; ?></td>
-                    <td><?php echo $order['country']; ?></td>
+                    <td><?php echo $order['street'] . ' ' . $order['number'] . ', ' . $order['postal_code'] . ' ' . $order['city'] . ', ' . $order['country']; ?></td>
                     <td><?php echo $order['extra_info']; ?></td>
                     <td>
                         <!-- Form to change order status -->
@@ -153,7 +148,7 @@ if (isset($_POST['print_label'])) {
                                 <option value="Delivered" <?php echo ($order['status'] == 'Delivered') ? 'selected' : ''; ?>>Delivered</option>
                                 <!-- Add more status options as needed -->
                             </select>
-                            <input type="submit" name="update_status" value="Update">
+                            <input type="submit" name="update_status" value="Update" class="admin-button">
                         </form>
                     </td>
                     <td>

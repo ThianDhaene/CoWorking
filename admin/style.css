@@ -1,15 +1,36 @@
-th,td{
+
+h1 {
+    color: #000000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #6e6e6e;
+    padding: 8px;
+    text-align: center;
     font-family: "Rubik", sans-serif;
+    max-width: 80rem;
+    
 }
 
-th,td{
-    padding-right: 5rem;
+thead {
+    background-color: #ffffff;
 }
 
+hr {
+    height: 1px;
+    background-color: #000000;
+    
+}
 tr{
     padding-top: 2rem;
     text-align: center;
-
+    font-size: 1.8rem;
 }
 
 .orderlabel {
@@ -33,7 +54,7 @@ tr{
 .logoutbutton{
     background-color: #000000;
   color: white;
-  padding: 10px 25px;
+  padding: 10px 50px;
   border: none;
   border-radius: 1em;
   cursor: pointer;
@@ -48,3 +69,64 @@ tr{
 .logoutbutton:hover {
     transform: scale(1.05);
 }
+.admin-button{
+    font-size: 2rem;
+    background-color: #000000;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+    margin-left: 1rem;
+    margin-top: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+.print-button{
+    font-size: 2rem;
+    background-color: #000000;
+    color: white;
+    padding: 5px 25px;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+    transition: transform 0.2s ease-in-out;
+}
+.admin-button:hover , .print-button:hover{
+    transform: scale(1.05);
+}
+
+select[name="new_status"] {
+    padding: 5px 30px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 1em;
+    background-color: #fff;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: "Rubik", sans-serif;
+}
+
+select[name="new_status"]:focus {
+    outline: none;
+    border-color: #000000; 
+}
+
+select[name="new_status"] option {
+    padding: 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+
+
