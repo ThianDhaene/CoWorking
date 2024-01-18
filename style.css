@@ -27,8 +27,8 @@ button {
     font-weight: bolder;
     width: 100px;
     height: 60px;
-
 }
+
 button:nth-child(2):hover {
     background-image: url('./en/img/vlag_en.png');
     color:transparent;

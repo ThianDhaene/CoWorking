@@ -130,7 +130,7 @@ $conn->close();
   </div>
   <main>
     <div class="containertje">
-        <h1><span class="about">L</span><span class="about">O</span><span class="about">G</span><span class="about">I</span><span class="about">N</span></h1>
+        <h1><span class="login">L</span><span class="login">O</span><span class="login">G</span><span class="login">I</span><span class="login">N</span></h1>
     </div>
     <div class="container logincontainer">
         <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">

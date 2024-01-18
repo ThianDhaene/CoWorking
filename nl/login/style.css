@@ -76,3 +76,21 @@ body {
       width: 100%;
     }
   }
+  .login {
+    -webkit-text-stroke: 0.02em rgb(0, 0, 0);
+    -webkit-text-fill-color: transparent;
+  }
+  .login:hover {
+    cursor: default;
+    -webkit-text-fill-color:rgb(0, 0, 0);
+    -webkit-text-stroke: 0.02em rgb(224, 224, 224);
+  }
+  h1,h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 12rem;
+    color: rgb(78, 78, 78);
+  }
+  
