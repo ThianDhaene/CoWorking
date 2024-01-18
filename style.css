@@ -1,12 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 40em;
     background-color: #f2f2f2;
 }
 
@@ -16,10 +16,40 @@ h1 {
 
 .language-buttons {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 button {
+    border-radius: 1em;
+    margin-top: 1em;
     padding: 10px;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: bolder;
+    width: 100px;
+    height: 60px;
+
 }
+button:nth-child(2):hover {
+    background-image: url('./en/img/vlag_en.png');
+    color:transparent;
+    cursor: pointer;
+}
+button:first-child:hover {
+    background-image: url('./en/img/vlag_nl.png');
+    color:transparent;
+    cursor: pointer;
+}
+.logo {
+    scale: 75%;
+    margin-bottom: -1em;
+}
+.titel {
+    -webkit-text-stroke: 0.03em rgb(0, 0, 0);
+    -webkit-text-fill-color: transparent;
+  }
+
+.titel:hover {
+    cursor: default;
+    -webkit-text-fill-color:rgb(0, 0, 0);
+    -webkit-text-stroke: 0.02em rgb(224, 224, 224);
+  }
