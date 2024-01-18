@@ -130,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8" />
@@ -176,7 +176,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
                 </div>
                 <span class="product-price" data-original-price="25.00">4.99</span>
 
-                <p class="product-description">Ignite your style with the ietsgents Minimalistic Lighter. Sleek and sophisticated, this lighter combines functionality with a clean design. Elevate your everyday essentials with the ietsgents Minimalistic Lighter, a perfect blend of form and utility.</p>
+                <p class="product-description">Laat je stijl ontbranden met de ietsgents Minimalistic Lighter. Strak en verfijnd, combineert deze aansteker functionaliteit met een strak ontwerp. Til je alledaagse benodigdheden naar een hoger niveau met de ietsgents Minimalistic Lighter, een perfecte mix van vorm en bruikbaarheid.</p>
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="add-to-cart-form">
                   <label for="quantity" class="quantity-label">Quantity:</label>
                   <input type="number" name="quantity" value="1" min="1" required class="quantity-input">
@@ -188,7 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
             <div class="reviews">
               <div class="add-review">
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                    <label for="rating">Rating:</label>
+                    <label for="rating">Beoordeling</label>
                     <div class="rating">
                         <?php
                         // Loop to generate 5 stars
@@ -199,25 +199,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
                     </div>
                     <input type="hidden" name="rating" id="selected-rating" value="0" required>
                     <br>
-                    <label for="comment">Review:</label><br>
+                    <label for="comment">Recensie:</label><br>
                     <textarea name="comment" required></textarea>
                     <br>
-                    <input type="submit" name="submit_review" value="Submit Review">
+                    <input type="submit" name="submit_review" value="Verstuur Recensie">
                 </form>
               </div>
               <div class="reviews-container">
-                <p><strong>What others think about this product:</strong></p>
+                <p><strong>Wat anderen van dit product vinden:</strong></p>
                   <?php
                   if (empty($reviews)) {
-                      echo "<p>No reviews available for this product.</p>";
+                      echo "<p>Geen beoordelingen beschikbaar voor dit product.</p>";
                   } else {
                       // Loop through reviews and display them
                       foreach ($reviews as $review):
                   ?>
                           <div class="review">
-                          <p><strong><?php echo $review['username'];?></strong></p>
-                              <p><strong>Rating:</strong> <?php echo generateStars($review['rating']); ?></p>
-                              <p><strong>Comment:</strong> <?php echo $review['comment']; ?></p>
+                              <p><strong><?php echo $review['username'];?></strong></p>
+                              <p><strong>Beoordeling:</strong> <?php echo generateStars($review['rating']); ?></p>
+                              <p><strong>Recensie:</strong> <?php echo $review['comment']; ?></p>
                           </div>
                           <!-- Display the average rating -->
                       

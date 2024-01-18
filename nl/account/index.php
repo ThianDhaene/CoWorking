@@ -62,7 +62,7 @@ if (isset($_POST['logout'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,30 +102,30 @@ if (isset($_POST['logout'])) {
         if ($address_result && $address_result->num_rows > 0) {
             $address = $address_result->fetch_assoc();}
         ?>
-        <h1>Welcome, <?php echo $username; ?>!</h1>
+        <h1>Welkom, <?php echo $username; ?>!</h1>
         <div class="userinfo">
-            <p class="gebruiker">Your account information:</p>
+            <p class="gebruiker">Jouw accountinformatie.</p>
             <ul>
-                <li>Username: <?php echo $username; ?></li>
+                <li>Gebruikersnaam: <?php echo $username; ?></li>
                 <li>Email: <?php echo $email; ?></li>
                 <!-- Add more details as needed -->
             </ul>
-            <p class="adres">Your Address:</p>
+            <p class="adres">Uw adres:</p>
                 <ul>
-                    <li>Street: <?php echo $street; ?></li>
-                    <li>Number: <?php echo $number; ?></li>
-                    <li>City: <?php echo $city; ?></li>
-                    <li>Postal Code: <?php echo $zipcode; ?></li>
-                    <li>Country: <?php echo $country; ?></li>
+                    <li>Straat: <?php echo $street; ?></li>
+                    <li>Huisnummer: <?php echo $number; ?></li>
+                    <li>Stad: <?php echo $city; ?></li>
+                    <li>Postcode: <?php echo $zipcode; ?></li>
+                    <li>Land: <?php echo $country; ?></li>
                     <?php if (!empty($address['extra_info'])) { ?>
-                        <li>Extra Information: <?php echo $address['extra_info']; ?></li>
+                        <li>Extra Informatie: <?php echo $address['extra_info']; ?></li>
                     <?php } ?>
                 </ul>
         </div>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <input type="submit" name="logout" value="Logout">
+            <input type="submit" name="logout" value="Uitloggen">
         </form>
-        <h1>Your Orders</h1>
+        <h1>Uw bestellingen</h1>
         <?php
         // Check if there are orders
         if ($result->num_rows > 0) {
@@ -140,9 +140,9 @@ if (isset($_POST['logout'])) {
                 $items_result = $conn->query($items_sql);
         ?>
         <div class="order">
-                    <p>Order ID: <?php echo $order_id; ?></p>
-                    <p>Order Date: <?php echo $order_date; ?></p>
-                    <p>Total Amount: €<?php echo $total_amount; ?></p>
+                    <p>Bestel-ID: <?php echo $order_id; ?></p>
+                    <p>Besteldatum: <?php echo $order_date; ?></p>
+                    <p>Totaal Bedrag: €<?php echo $total_amount; ?></p>
                     <p>Status: <?php echo $status; ?></p>
 
                     <?php
@@ -165,21 +165,21 @@ if (isset($_POST['logout'])) {
                             if ($product_name_result && $product_name_result->num_rows > 0) {
                                 $product_name = $product_name_result->fetch_assoc()['name'];
                             } else {
-                                $product_name = "Product Not Found";
+                                $product_name = "Product Niet Gevonden";
                             }
                     ?>
 
                             <div class="order-item">
                                 <hr>
                                 <p>Product: <?php echo $product['name']; ?></p>
-                                <p>Quantity: <?php echo $quantity; ?></p>
-                                <p>Price: €<?php echo $price; ?></p>
+                                <p>Aantal: <?php echo $quantity; ?></p>
+                                <p>Prijs: €<?php echo $price; ?></p>
                             </div>
 
                     <?php
                         }
                     } else {
-                        echo "<p>No items in this order.</p>";
+                        echo "<p>Geen items in deze bestelling.</p>";
                     }
                     ?>
                 </div>
@@ -188,7 +188,7 @@ if (isset($_POST['logout'])) {
         <?php
             }
         } else {
-            echo "<p>You have no orders yet.</p>";
+            echo "<p>U heeft nog geen bestellingen.</p>";
         }
         ?>
 

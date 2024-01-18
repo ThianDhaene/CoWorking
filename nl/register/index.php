@@ -84,7 +84,7 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -118,25 +118,25 @@ $conn->close();
   </header>
   <main>
     <div class="containertje">
-      <h1><span class="about">R</span><span class="about">E</span><span class="about">G</span><span class="about">I</span><span class="about">S</span><span class="about">T</span><span class="about">E</span><span class="about">R</span></h1>
+      <h1><span class="about">R</span><span class="about">E</span><span class="about">G</span><span class="about">I</span><span class="about">S</span><span class="about">T</span><span class="about">R</span><span class="about">E</span><span class="about">E</span><span class="about">R</span></h1>
     </div>
 
     <div class="container">
       <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-          <label for="username"><b>Username:</b></label>
-          <input type="text" name="username" placeholder="Enter username" required>
+          <label for="username"><b>Gebruikersnaam:</b></label>
+          <input type="text" name="username" placeholder="Voer gebruikersnaam in" required>
             <?php
             // Display error message for invalid username after form submission
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
                 if (isset($checkUsernameResult) && $checkUsernameResult->num_rows > 0) {
-                    echo "<p style='color: red;'>Username is already taken. Please choose another.</p>";
+                    echo "<p style='color: red;'>Gebruikersnaam is al in gebruik. Kies alstublieft een andere.</p>";
                 }
             }
             ?>
           <br>
   
-          <label for="password"><b>Password:</b></label>
-          <input type="password" name="password" placeholder="Enter Password" required>
+          <label for="password"><b>Wachtwoord:</b></label>
+          <input type="password" name="password" placeholder="Voer wachtwoord in" required>
           <br>
   
           <label for="email"><b>Email:</b></label>
@@ -145,13 +145,13 @@ $conn->close();
             // Display error message for invalid email after form submission
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
                 if (isset($checkEmailResult) && $checkEmailResult->num_rows > 0) {
-                    echo "<p style='color: red;'>Email is already in use. Please use a different email.</p>";
+                    echo "<p style='color: red;'>Email is al in gebruik. Gebruik alstublieft een ander e-mailadres.</p>";
                 }
             }
             ?>
           <br>
   
-          <input type="submit" name="register" value="Register">
+          <input type="submit" name="register" value="Registreer">
             <?php
             // Display success message after successful registration and no errors
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"]) && !($checkEmailResult->num_rows > 0) && !($checkUsernameResult->num_rows > 0)) {
@@ -161,7 +161,7 @@ $conn->close();
       </form>
     </div>
     <div class="container" style="background-color: transparent">
-      <span class="psw"><a href="../login">Already have an account?</a></span>
+      <span class="psw"><a href="../login">Heeft u al een account?</a></span>
     </div>
   </main>
   </body>

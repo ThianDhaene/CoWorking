@@ -156,7 +156,7 @@ $product_result = $conn->query($product_sql);
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -193,7 +193,7 @@ $product_result = $conn->query($product_sql);
 
   <main>
     <section class="section-inleiding">
-    <h1><span class="carth1">S</span><span class="carth1">H</span><span class="carth1">O</span><span class="carth1">P</span><span class="carth1">P</span><span class="carth1">I</span><span class="carth1">N</span><span class="carth1">G</span><span class="carth1">&nbsp;</span><span class="carth1">C</span><span class="carth1">A</span><span class="carth1">R</span><span class="carth1">T</span></h1>
+    <h1><span class="carth1">W</span><span class="carth1">I</span><span class="carth1">N</span><span class="carth1">K</span><span class="carth1">E</span><span class="carth1">L</span><span class="carth1">M</span><span class="carth1">A</span><span class="carth1">N</span><span class="carth1">D</span><span class="carth1">J</span><span class="carth1">E</span></h1>
     </section>
     <div class="cart-container">
         <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { ?>
@@ -225,11 +225,11 @@ $product_result = $conn->query($product_sql);
                         
                         <li>
                             <img src="<?php echo $image_path; ?>" alt="Product Image">
-                            <b><?php echo "$product_name, Quantity: $quantity"; ?></b>
+                            <b><?php echo "$product_name, Aantal: $quantity"; ?></b>
                             <!-- Add a form to remove the item -->
                             <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="remove-item-form">
                                 <input type="hidden" name="remove_product_id" value="<?php echo $product_id; ?>">
-                                <button type="submit" name="remove_item" class="remove-item-button">Remove</button>
+                                <button type="submit" name="remove_item" class="remove-item-button">Verwijderen</button>
                             </form>
                         </li>
                     <?php
@@ -239,31 +239,31 @@ $product_result = $conn->query($product_sql);
                     }
                 }} ?>
             </ul>
-            <p>Total Amount: €<?php echo calculateTotalAmount($conn); ?></p>
+            <p>Totaal bedrag: €<?php echo calculateTotalAmount($conn); ?></p>
             <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                    <label for="street">Street:</label>
+                    <label for="street">Straat:</label>
                     <input type="text" name="street" value="<?php echo $street; ?>" required>
                     <br>
-                    <label for="number">Number:</label>
+                    <label for="number">Huisnummer:</label>
                     <input type="text" name="number" value="<?php echo $number; ?>" required>
                     <br>
-                    <label for="city">City:</label>
+                    <label for="city">Stad:</label>
                     <input type="text" name="city" value="<?php echo $city; ?>" required>
                     <br>
-                    <label for="postal_code">Postal Code:</label>
+                    <label for="postal_code">Postcode:</label>
                     <input type="text" name="postal_code" value="<?php echo $zipcode; ?>" required>
                     <br>
-                    <label for="country">Country:</label>
+                    <label for="country">Land:</label>
                     <input type="text" name="country" value="<?php echo $country; ?>" required>
                     <br>
-                    <label for="extra_info">Extra Information:</label>
+                    <label for="extra_info">Extra Informatie:</label>
                     <textarea name="extra_info"><?php echo $extra_info; ?></textarea>
                     <br>
-                    <input type="submit" name="checkout" value="Checkout">
+                    <input type="submit" name="checkout" value="Afrekenen">
               </form>
 
         <?php } else { ?>
-            <p>Your shopping cart is empty.</p>
+            <p>Uw winkelmandje is leeg.</p>
         <?php } ?>
     </div>
   </main>

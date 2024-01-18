@@ -71,7 +71,7 @@ if (isset($_POST['btnSubmit'])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
@@ -110,9 +110,9 @@ if (isset($_POST['btnSubmit'])) {
         <h1><span class="contact">C</span><span class="contact">O</span><span class="contact">N</span><span class="contact">T</span><span class="contact">A</span><span class="contact">C</span><span class="contact">T</span></h1>
         <div class="contactcontainer">
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-              <p class="message">Do you have any questions or remarks for us. Leave a message for us!</p>
+              <p class="message">Heb je vragen of opmerkingen voor ons? Laat een bericht voor ons achter!</p>
               <div>
-                <label for="name">Name</label>
+                <label for="name">Naam</label>
                 <input type="text" id="name" name="name" value="<?php echo htmlentities($name); ?>" class="input-text"/>
                 <span class="message error"><?php echo $msgName; ?></span>
               </div>
@@ -124,12 +124,12 @@ if (isset($_POST['btnSubmit'])) {
               </div>
 
               <div>
-                <label for="message">Message</label>
+                <label for="message">Bericht</label>
                 <textarea name="message" id="message" rows="5" cols="40"><?php echo htmlentities($message); ?></textarea>
                 <span class="message error"><?php echo $msgMessage; ?></span>
               </div>
 
-              <input type="submit" id="btnSubmit" name="btnSubmit" value="Send" class="button"/>
+              <input type="submit" id="btnSubmit" name="btnSubmit" value="Verstuur" class="button"/>
           </form>
         </div>
     </main>

@@ -95,7 +95,7 @@ $conn->close();
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -130,29 +130,33 @@ $conn->close();
   </div>
   <main>
     <div class="containertje">
+<<<<<<< Updated upstream
       <h1><span class="login">L</span><span class="login">O</span><span class="login">G</span><span class="login">I</span><span class="login">N</span></h1>
+=======
+        <h1><span class="about">A</span><span class="about">A</span><span class="about">N</span><span class="about">M</span><span class="about">E</span><span class="about">L</span><span class="about">D</span><span class="about">E</span><span class="about">N</span></h1>
+>>>>>>> Stashed changes
     </div>
     <div class="container logincontainer">
         <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-        <label for="username"><b>Username:</b></label>
-        <input type="text" name="username" placeholder="Enter username" required>
+        <label for="username"><b>Gebruikersnaam:</b></label>
+        <input type="text" name="username" placeholder="Voer gebruikersnaam in" required>
           <?php
           // Display error message for user not found after form submission
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
               if ($result->num_rows == 0) {
-                  echo "<p style='color: #b01605;'>User not found!</p>";
+                  echo "<p style='color: #b01605;'>Gebruiker niet gevonden!</p>";
               }
           }
           ?>
         <br>
 
-        <label for="password"><b>Password:</b></label>
-        <input type="password" name="password" placeholder="Enter password" required>
+        <label for="password"><b>Wachtwoord:</b></label>
+        <input type="password" name="password" placeholder="Voer wachtwoord in" required>
           <?php
           // Display error message for incorrect password after form submission
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
               if ($result->num_rows > 0 && !verifyPassword($password, $row["password_hash"])) {
-                  echo "<p style='color: #b01605;'>Incorrect password!</p>";
+                  echo "<p style='color: #b01605;'>Onjuiste wachtwoord!</p>";
               }
           }
           ?>
@@ -162,18 +166,18 @@ $conn->close();
           <?php
               // Display a message if login is required
               if ($message === 'login_required') {
-                echo "<p style='color: #b01605;'>Please login first.</p>";
+                echo "<p style='color: #b01605;'>Gelieve eerst in te loggen!</p>";
               }
               // Display success message after successful login and no errors
               if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"]) && !($result->num_rows == 0) && !(($result->num_rows > 0 && !verifyPassword($password, $row["password_hash"])))) {
-                  echo "<p style='color: green;'>Login successful!</p>";
+                  echo "<p style='color: green;'>Aanmelden gelukt!</p>";
               }
           ?>
 
         </form>
     </div>
     <div class="container logincontainer" style="background-color: transparent">
-          <span class="psw"><a href="../register">Create an account</a></span>
+          <span class="psw"><a href="../register">Registreer</a></span>
     </div>
     </main>
     <footer>

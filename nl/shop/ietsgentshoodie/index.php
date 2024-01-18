@@ -175,19 +175,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
                 </div>
                 <span class="product-price" data-original-price="25.00">49.99 EUR</span>
 
-                <p class="product-description">Introducing the ietsgents Hoodie where simplicity meets style. Crafted with precision, this hoodie embodies clean lines and a sleek design, making it the perfect wardrobe essential for those who appreciate understated elegance. Elevate your casual look with the ietsgents Minimalistic Hoodie and embrace the essence of modern minimalism.</p>
+                <p class="product-description">Maak kennis met de ietsgents Hoodie waar eenvoud stijl ontmoet. Met precisie vervaardigd, belichaamt deze hoodie strakke lijnen en een gestroomlijnd ontwerp, waardoor het de perfecte essentiële toevoeging is aan de garderobe voor degenen die ingetogen elegantie waarderen. Verhoog je casual uitstraling met de ietsgents Minimalistic Hoodie en omarm de essentie van modern minimalisme.</p>
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="add-to-cart-form">
-                  <label for="quantity" class="quantity-label">Quantity:</label>
+                  <label for="quantity" class="quantity-label">Aantal:</label>
                   <input type="number" name="quantity" value="1" min="1" required class="quantity-input">
                   <br>
-                  <input type="submit" name="add_to_cart" value="Add to Cart" class="add-to-cart-button">
+                  <input type="submit" name="add_to_cart" value="Voeg toe aan winkelmandje" class="add-to-cart-button">
                 </form>
               </div>
             </div>
             <div class="reviews">
               <div class="add-review">
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                    <label for="rating">Rating:</label>
+                    <label for="rating">Beoordeling</label>
                     <div class="rating">
                         <?php
                         // Loop to generate 5 stars
@@ -198,25 +198,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
                     </div>
                     <input type="hidden" name="rating" id="selected-rating" value="0" required>
                     <br>
-                    <label for="comment">Review:</label><br>
+                    <label for="comment">Recensie:</label><br>
                     <textarea name="comment" required></textarea>
                     <br>
-                    <input type="submit" name="submit_review" value="Submit Review">
+                    <input type="submit" name="submit_review" value="Verstuur Recensie">
                 </form>
               </div>
               <div class="reviews-container">
-                <p><strong>What others think about this product:</strong></p>
+                <p><strong>Wat anderen van dit product vinden:</strong></p>
                   <?php
                   if (empty($reviews)) {
-                      echo "<p>No reviews available for this product.</p>";
+                      echo "<p>Geen beoordelingen beschikbaar voor dit product.</p>";
                   } else {
                       // Loop through reviews and display them
                       foreach ($reviews as $review):
                   ?>
                           <div class="review">
-                          <p><strong><?php echo $review['username'];?></strong></p>
-                              <p><strong>Rating:</strong> <?php echo generateStars($review['rating']); ?></p>
-                              <p><strong>Comment:</strong> <?php echo $review['comment']; ?></p>
+                              <p><strong><?php echo $review['username'];?></strong></p>
+                              <p><strong>Beoordeling:</strong> <?php echo generateStars($review['rating']); ?></p>
+                              <p><strong>Recensie:</strong> <?php echo $review['comment']; ?></p>
                           </div>
                           <!-- Display the average rating -->
                       

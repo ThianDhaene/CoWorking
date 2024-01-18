@@ -103,7 +103,7 @@ if ($result->num_rows > 0) {
     </main>
 
     <footer>
-        <a href="../">Klik hier om terug te gaan</a>
+        <a href="../">Click here to go back</a>
     </footer>
 </body>
 </html>
