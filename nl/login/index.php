@@ -130,11 +130,7 @@ $conn->close();
   </div>
   <main>
     <div class="containertje">
-<<<<<<< Updated upstream
       <h1><span class="login">L</span><span class="login">O</span><span class="login">G</span><span class="login">I</span><span class="login">N</span></h1>
-=======
-        <h1><span class="about">A</span><span class="about">A</span><span class="about">N</span><span class="about">M</span><span class="about">E</span><span class="about">L</span><span class="about">D</span><span class="about">E</span><span class="about">N</span></h1>
->>>>>>> Stashed changes
     </div>
     <div class="container logincontainer">
         <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
