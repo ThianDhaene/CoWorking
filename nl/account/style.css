@@ -1,0 +1,57 @@
+h1{
+    font-size: 5rem;
+    text-decoration: underline;
+}
+.userinfo li{
+    font-family: "Rubik", sans-serif;
+}
+
+.userinfo ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.userinfo ul li{
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    padding-right: 2rem;
+}
+
+.order {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    border: 2px solid;
+    border-radius: 15px;
+}
+.gebruiker,.adres{
+    font-size: 3rem;
+    font-weight: 800;
+}
+hr{
+    border: 0.1rem solid #838383;
+    max-width: 40rem;
+    margin-left: 0;
+}
+
+input[type="submit"] {
+    background-color: #000000;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+  margin-top: 2rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+
