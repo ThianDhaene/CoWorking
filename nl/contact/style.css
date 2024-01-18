@@ -70,6 +70,7 @@ input[type=submit] {
   text-transform: uppercase;
   box-shadow: 0 0 1rem rgba(0,0,0,0.2);
   transition: transform 0.2s ease-in-out;
+  margin-bottom: 5rem;
 }
 input[type=submit]:hover {
   transform: scale(1.05);
