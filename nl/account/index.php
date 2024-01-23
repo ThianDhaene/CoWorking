@@ -104,7 +104,7 @@ if (isset($_POST['logout'])) {
         ?>
         <h1>Welkom, <?php echo $username; ?>!</h1>
         <div class="userinfo">
-            <p class="gebruiker">Jouw accountinformatie.</p>
+            <p class="gebruiker">Jouw accountinformatie:</p>
             <ul>
                 <li>Gebruikersnaam: <?php echo $username; ?></li>
                 <li>Email: <?php echo $email; ?></li>

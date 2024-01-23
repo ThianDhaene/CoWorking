@@ -11,14 +11,19 @@
     font-size: 1.6rem;
     background-color: rgb(224, 224, 224);
     color: #000000;
-    max-width: 70%;
+
     margin: 0 auto;
     padding: 0;
     overflow-x: hidden;
   }
 
+  main {
+    max-width: 70%;
+    
+  }
+
   .container {
-    max-width: 80rem;
+    max-width: 100%;
     margin: 0 auto 0 auto;
     padding: 0 1rem 0 1rem;
   }
@@ -100,26 +105,27 @@ h1 {
   transition: rotate 0.15s ease-in-out;
 }
 footer {
-  bottom: 0;
-  margin-left: 60em;
-  box-shadow: 0 0 0 100vmax rgb(0, 0, 0, 0.3);
-  clip-path: inset(0-100vmax);
-  background-color: rgb(0,0,0, 0.3);
-  padding: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  background-color: rgba(0,0,0, 0.3);
+  height: 40px; 
+  width: 100%;
+  overflow: hidden;
 }
-footer p {
+
+.footer-p {
+  margin: 0;
   font-size: 1.5rem;
-  margin-right: 44em;
 }
+
+.socials {
+  margin: 0;
+}
+
 .socials img {
-  color: white;
+  margin: 0rem;
   width: 1em;
-  padding: 0;
-  margin: 3 1em;
-  display: inline-block;
 }
 .socials ul {
   display: flex;
