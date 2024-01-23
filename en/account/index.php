@@ -194,7 +194,6 @@ if (isset($_POST['logout'])) {
 
 
     </main>
-
 </body>
 </html>
 <?php

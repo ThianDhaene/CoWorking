@@ -230,7 +230,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
         </div>
     </main>
     <footer>
-    </footer>
+    <div class="footer-p">
+      <p>&copy; ietsgents 2023</p>
+    </div>
+    <nav class="socials">
+      <ul>
+        <li>
+          <a href="https://www.instagram.com/ietsgents/" target="_blank">
+            <img src="../img/instagram_logo.png" alt="">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
     <script src="../stars.js"></script>
 </body>
 
