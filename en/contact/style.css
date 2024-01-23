@@ -115,7 +115,7 @@ input[type=submit]:hover {
 body .bedanking {
   margin: auto;
   padding: 0 1rem;
-  max-width: 70%;
+  max-width: 70%; 
   text-align: center;
 }
 
