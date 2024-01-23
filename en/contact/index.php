@@ -84,6 +84,18 @@ if (isset($_POST['btnSubmit'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
+    <script>
+window.embeddedChatbotConfig = {
+chatbotId: "VcTyy6DJxJweJpURmub1b",
+domain: "www.chatbase.co"
+}
+</script>
+<script
+src="https://www.chatbase.co/embed.min.js"
+chatbotId="VcTyy6DJxJweJpURmub1b"
+domain="www.chatbase.co"
+defer>
+</script>
 </head>
 
 <body>
@@ -135,7 +147,7 @@ if (isset($_POST['btnSubmit'])) {
     </main>
     <footer>
         <div class="footer-p">
-          <p>&copy ietsgents 2023</p>
+          <p>&copy; ietsgents 2023</p>
         </div>
         <nav class="socials">
           <ul>
