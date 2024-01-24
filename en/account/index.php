@@ -10,9 +10,9 @@ if (!isset($_SESSION['user_id'])) {
 
 // Database connection
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ietsgents";
+$username = "lukas.ietsgents";
+$password = "ietsgents.ww";
+$dbname = "db_ietsgents";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

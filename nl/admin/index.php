@@ -21,9 +21,9 @@ if (isset($_POST['logout'])) {
 // Include your database connection and any necessary functions
 // Database connection
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ietsgents";
+$username = "lukas.ietsgents";
+$password = "ietsgents.ww";
+$dbname = "db_ietsgents";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

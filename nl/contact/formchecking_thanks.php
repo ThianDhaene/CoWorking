@@ -17,6 +17,7 @@
 
 	echo '<p>Dank je wel voor je bericht ' . htmlentities($name). '! We zullen dit zo snel mogelijk beantwoorden.</p>';
 	echo '<img src="../img/logo1_zonder_achtergrond.png" alt="ietsgents">';
+	echo '<meta http-equiv="refresh" content="3; url=https://lukasvermoere.ikdoeict.be/coworking/nl/contact/">'
 
 	?>
 </div>
