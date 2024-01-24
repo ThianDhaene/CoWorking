@@ -67,7 +67,7 @@ if (isset($_POST['logout'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ietsgents | about</title>
+    <title>ietsgents | account</title>
     <link rel="icon" href="../img/logo2.png" />
     <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style.css" />
