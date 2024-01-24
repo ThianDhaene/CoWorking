@@ -101,7 +101,7 @@ $conn->close();
 <body>
   <header>
     <a href="../">
-      <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+      <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="ietsgents">
     </a>
     <nav>
       <ul>
@@ -112,11 +112,23 @@ $conn->close();
       </ul>
     </nav>
     <ul>
-      <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
-      <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
+      <li><a href="../login"><img src="../img/account.webp" class="account" alt="login"></a></li>
+      <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt="winkelkar"></a></li>
     </ul>
   </header>
   <main>
+  <script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "VcTyy6DJxJweJpURmub1b",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="VcTyy6DJxJweJpURmub1b"
+      domain="www.chatbase.co"
+      defer>
+      </script>
     <div class="containertje">
       <h1><span class="about">R</span><span class="about">E</span><span class="about">G</span><span class="about">I</span><span class="about">S</span><span class="about">T</span><span class="about">R</span><span class="about">E</span><span class="about">E</span><span class="about">R</span></h1>
     </div>

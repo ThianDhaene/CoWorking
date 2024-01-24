@@ -36,12 +36,12 @@ if ($result->num_rows > 0) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Confirmation</title>
+    <title>Bestelbevestiging</title>
     <link rel="stylesheet" href="styleoc.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,13 +51,13 @@ if ($result->num_rows > 0) {
     </header>
     <main>
     <div class="order">
-        <h1><span class="orderconfirmation">O</span><span class="orderconfirmation">r</span><span class="orderconfirmation">d</span><span class="orderconfirmation">e</span><span class="orderconfirmation">r</span><span class="orderconfirmation"> </span><span class="orderconfirmation"> </span><span class="orderconfirmation"> </span><span class="orderconfirmation"> </span> <span class="orderconfirmation">C</span><span class="orderconfirmation">o</span><span class="orderconfirmation">n</span><span class="orderconfirmation">f</span><span class="orderconfirmation">i</span><span class="orderconfirmation">r</span><span class="orderconfirmation">m</span><span class="orderconfirmation">a</span><span class="orderconfirmation">t</span><span class="orderconfirmation">i</span><span class="orderconfirmation">o</span><span class="orderconfirmation">n</span></h1>
+    <h1><span class="orderconfirmation">O</span><span class="orderconfirmation">R</span><span class="orderconfirmation">D</span><span class="orderconfirmation">E</span><span class="orderconfirmation">R</span><span class="orderconfirmation"> </span><span class="orderconfirmation">C</span><span class="orderconfirmation">O</span><span class="orderconfirmation">N</span><span class="orderconfirmation">F</span><span class="orderconfirmation">I</span><span class="orderconfirmation">R</span><span class="orderconfirmation">M</span><span class="orderconfirmation">A</span><span class="orderconfirmation">T</span><span class="orderconfirmation">I</span><span class="orderconfirmation">O</span><span class="orderconfirmation">N</span></h1>
         <p class="thanks">Thank you for your order!</p>
         
 
-        <h2>Order Details</h2>
-        <p>Order ID: <?php echo $order['order_id']; ?></p>
-        <p>Order Date: <?php echo $order['order_date']; ?></p>
+        <h2>Order details</h2>
+        <p>Order-ID: <?php echo $order['order_id']; ?></p>
+        <p>Order Datte: <?php echo $order['order_date']; ?></p>
         <p>Total Amount: €<?php echo $order['total_amount']; ?></p>
         <p>Status: <?php echo $order['status']; ?></p>
 

@@ -14,7 +14,7 @@ if ($_SESSION['pageopened']) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>ietgents | spin and win</title>
@@ -32,11 +32,11 @@ if ($_SESSION['pageopened']) {
 <main>
   <div class="titel">
       <h2><span class="about">C</span><span class="about">O</span><span class="about">N</span><span class="about">G</span><span class="about">R</span><span class="about">A</span><span class="about">T</span><span class="about">S</span><span class="about">, </span> <span class="about">Y</span><span class="about">O</span><span class="about">U </span><span class="about">F</span><span class="about">O</span><span class="about">U</span><span class="about">N</span><span class="about">D</span><span class="about"> A</span><span class="about">N</span><span class="about"> E</span><span class="about">A</span><span class="about">S</span><span class="about">T</span><span class="about">E</span><span class="about">R </span><span class="about">E</span><span class="about">G</span><span class="about">G</span></h2>
-	</div>
+      </div>
       <div class="game">
-			<img class="pin" src="../img/pin.png">
-			<img class="wheel" src="../img/wheel.png">
-			<img class="button" id="disable" src="../img/button.png">
+			<img class="pin" src="../img/pin.png" alt="pin">
+			<img class="wheel" src="../img/wheel.png" alt="wheel">
+			<img class="button" id="disable" src="../img/button.png" alt="button">
 		</div>
     <div class="text">
       <h2>Follow these steps to claim your price:</h2>

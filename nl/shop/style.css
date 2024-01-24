@@ -18,7 +18,7 @@ nav {
 }
 .projects-all ul {
   margin-top: 3em;
-  margin-bottom: 40em;
+  margin-bottom: 10em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,28 +94,11 @@ nav {
   background-color: #222;
   color: rgb(221, 221, 221);
 }
-.socials img {
-  color: white;
-  width: 1em;
-  padding: 0;
-  margin: 3 1em;
-  display: inline-block;
-}
-.socials ul {
-  display: flex;
-  align-items: center;
-}
-.socials a {
-  padding: 0;
-}
+
 .outline:hover {
   cursor: default;
   -webkit-text-fill-color: rgb(0, 0, 0);
   -webkit-text-stroke: 0.02em rgb(0, 0, 0);
-}
-.socials a {
-  padding: 0;
-  margin: 0;
 }
 
 

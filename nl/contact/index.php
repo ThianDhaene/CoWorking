@@ -84,25 +84,13 @@ if (isset($_POST['btnSubmit'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
-    <script>
-window.embeddedChatbotConfig = {
-chatbotId: "VcTyy6DJxJweJpURmub1b",
-domain: "www.chatbase.co"
-}
-</script>
-<script
-src="https://www.chatbase.co/embed.min.js"
-chatbotId="VcTyy6DJxJweJpURmub1b"
-domain="www.chatbase.co"
-defer>
-</script>
 </head>
 
 <body>
     <div class="container">
       <header>
         <a href="../">
-          <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+          <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="ietsgents">
         </a>
         <nav>
           <ul>
@@ -113,52 +101,68 @@ defer>
           </ul>
         </nav>
         <ul>
-          <li><a href="../login"><img src="../img/account.webp" class="account" alt="" ></a></li>
-          <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
+        <li><a href="../login"><img src="../img/account.webp" class="account" alt="login"></a></li>
+            <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt="winkelkar"></a></li>
         </ul>
       </header>
     </div>
     <main>
+    <script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "VcTyy6DJxJweJpURmub1b",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="VcTyy6DJxJweJpURmub1b"
+      domain="www.chatbase.co"
+      defer>
+      </script>
+      <div class="margin">
         <h1><span class="contact">C</span><span class="contact">O</span><span class="contact">N</span><span class="contact">T</span><span class="contact">A</span><span class="contact">C</span><span class="contact">T</span></h1>
-        <div class="contactcontainer">
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-              <p class="message">Heb je vragen of opmerkingen voor ons? Laat een bericht voor ons achter!</p>
-              <div>
-                <label for="name">Naam</label>
-                <input type="text" id="name" name="name" value="<?php echo htmlentities($name); ?>" class="input-text"/>
-                <span class="message error"><?php echo $msgName; ?></span>
-              </div>
-            
-              <div>
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" value="<?php echo htmlentities($email); ?>" class="input-text"/>
-                <span class="message error"><?php echo $msgEmail; ?></span>
-              </div>
+          <div class="contactcontainer">
+              <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <p class="message">Heb je vragen of opmerkingen voor ons? Laat een bericht voor ons achter!</p>
+                <div>
+                  <label for="name">Naam</label>
+                  <input type="text" id="name" name="name" value="<?php echo htmlentities($name); ?>" class="input-text"/>
+                  <span class="message error"><?php echo $msgName; ?></span>
+                </div>
+              
+                <div>
+                  <label for="email">E-mail</label>
+                  <input type="text" id="email" name="email" value="<?php echo htmlentities($email); ?>" class="input-text"/>
+                  <span class="message error"><?php echo $msgEmail; ?></span>
+                </div>
 
-              <div>
-                <label for="message">Bericht</label>
-                <textarea name="message" id="message" rows="5" cols="40"><?php echo htmlentities($message); ?></textarea>
-                <span class="message error"><?php echo $msgMessage; ?></span>
-              </div>
+                <div>
+                  <label for="message">Bericht</label>
+                  <textarea name="message" id="message" rows="5" cols="40"><?php echo htmlentities($message); ?></textarea>
+                  <span class="message error"><?php echo $msgMessage; ?></span>
+                </div>
 
-              <input type="submit" id="btnSubmit" name="btnSubmit" value="Verstuur" class="button"/>
-          </form>
-        </div>
+                <input type="submit" id="btnSubmit" name="btnSubmit" value="Verstuur" class="button"/>
+            </form>
+          </div>
+      </div> 
     </main>
     <footer>
-        <div class="footer-p">
-          <p>&copy ietsgents 2023</p>
-        </div>
-        <nav class="socials">
-          <ul>
-            <li>
-              <a href="https://www.instagram.com/ietsgents/" target="_blank"
-                ><img src="../img/instagram_logo.png" alt="Instagram"
-              /></a>
-            </li>
-          </ul>
-        </nav>
-      </footer>
+    <div class="footer-content">
+      <div class="footer-p">
+        <p>&copy; ietsgents 2023</p>
+      </div>
+      <nav class="socials">
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/ietsgents/" target="_blank">
+              <img src="../img/instagram_logo.png" alt="Instagram Logo" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>  
 </body>
 
 </html>

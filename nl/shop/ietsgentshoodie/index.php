@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
 <body>
     <header class="container">
         <a href="./../../">
-            <img src="../../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+            <img src="../../img/logo2_zonder_achtergrond.png" class="logo" alt="ietsgents">
         </a>
         <nav>
             <ul>
@@ -159,8 +159,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
             </ul>
         </nav>
         <ul>
-            <li><a href="../../login"><img src="../../img/account.webp" class="account" alt=""></a></li>
-            <li><a href="../../cart"><img src="../../img/winkelmandje.webp" class="cart" alt=""></a></li>
+        <li><a href="../../login"><img src="../../img/account.webp" class="account" alt="login"></a></li>
+            <li><a href="../../cart"><img src="../../img/winkelmandje.webp" class="cart" alt="winkelkar"></a></li>
         </ul>
     </header>
     <main class="container">
@@ -178,7 +178,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
                 <p class="product-description">Maak kennis met de ietsgents Hoodie waar eenvoud stijl ontmoet. Met precisie vervaardigd, belichaamt deze hoodie strakke lijnen en een gestroomlijnd ontwerp, waardoor het de perfecte essentiële toevoeging is aan de garderobe voor degenen die ingetogen elegantie waarderen. Verhoog je casual uitstraling met de ietsgents Minimalistic Hoodie en omarm de essentie van modern minimalisme.</p>
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="add-to-cart-form">
                   <label for="quantity" class="quantity-label">Aantal:</label>
-                  <input type="number" name="quantity" value="1" min="1" required class="quantity-input">
+                  <input type="number" name="quantity" id="quantity" value="1" min="1" required="" class="quantity-input">
                   <br>
                   <input type="submit" name="add_to_cart" value="Voeg toe aan winkelmandje" class="add-to-cart-button">
                 </form>
@@ -199,7 +199,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
                     <input type="hidden" name="rating" id="selected-rating" value="0" required>
                     <br>
                     <label for="comment">Recensie:</label><br>
-                    <textarea name="comment" required></textarea>
+                    <textarea name="comment" id="comment" required=""></textarea>
                     <br>
                     <input type="submit" name="submit_review" value="Verstuur Recensie">
                 </form>
@@ -230,19 +230,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
         </div>
     </main>
     <footer>
-    <div class="footer-p">
-      <p>&copy; ietsgents 2023</p>
-    </div>
-    <nav class="socials">
-      <ul>
-        <li>
-          <a href="https://www.instagram.com/ietsgents/" target="_blank">
-            <img src="../img/instagram_logo.png" alt="">
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </footer>
+    </footer>
     <script src="../stars.js"></script>
 </body>
 

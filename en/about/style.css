@@ -11,22 +11,13 @@
     font-size: 1.6rem;
     background-color: rgb(224, 224, 224);
     color: #000000;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     overflow-x: hidden;
   }
-  
-  main {
+
+  .margin{
     max-width: 70%;
-    margin: 0 auto; 
-    padding: 2rem; 
-  }
-  
-
-  
-
-  .container {
-    max-width: 100%;
     margin: 0 auto 0 auto;
     padding: 0 1rem 0 1rem;
   }
@@ -107,36 +98,6 @@ h1 {
   rotate: 270deg;
   transition: rotate 0.15s ease-in-out;
 }
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0,0,0, 0.3);
-  height: 40px; 
-  width: 100%;
-  overflow: hidden;
-}
-
-.footer-p {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.socials {
-  margin: 0;
-}
-
-.socials img {
-  margin: 0rem;
-  width: 1em;
-}
-.socials ul {
-  display: flex;
-  align-items: center;
-}
-.socials a {
-  padding: 0;
-}  
 
 .about {
   -webkit-text-stroke: 0.02em rgb(0, 0, 0);
@@ -146,4 +107,11 @@ footer {
   cursor: default;
   -webkit-text-fill-color:rgb(0, 0, 0);
   -webkit-text-stroke: 0.02em rgb(224, 224, 224);
+}
+
+.kaart{
+  height: 75rem;
+  width: 100%;
+  border: 0;
+  margin-bottom: 3rem;
 }

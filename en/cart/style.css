@@ -14,6 +14,12 @@ h1{
   font-weight: 800;
   margin-bottom: 0;
 }
+
+.container {
+  max-width: 70%;
+  margin: 0 auto 0 auto;
+  padding: 0 1rem 0 1rem;
+}
 .carth1 {
   -webkit-text-stroke: 0.02em rgb(0, 0, 0);
   -webkit-text-fill-color: transparent;
@@ -29,6 +35,7 @@ h1{
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
   margin-top: 3rem;
   border-radius: 3rem;
+  margin-bottom: 5rem;
 }
 .cart-container p {
   font-weight: bold;
@@ -54,9 +61,6 @@ h1{
   width: 20rem;
   margin-right: 2rem;
   border-radius: 10px;
-}
-.cart-container ul li img:hover{
-  
 }
 
 

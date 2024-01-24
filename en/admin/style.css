@@ -1,4 +1,6 @@
-
+.container {
+    max-width: 90%;
+  }
 h1 {
     color: #000000;
 }

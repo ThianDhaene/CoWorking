@@ -112,7 +112,7 @@ $conn->close();
   <div class="container">
     <header>
       <a href="../">
-        <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+        <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="ietsgents">
       </a>
       <nav>
         <ul>
@@ -123,14 +123,26 @@ $conn->close();
         </ul>
       </nav>
       <ul>
-        <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
-        <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
+        <li><a href="../login"><img src="../img/account.webp" class="account" alt="login"></a></li>
+        <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt="cart"></a></li>
       </ul>
     </header>
   </div>
   <main>
+  <script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "VcTyy6DJxJweJpURmub1b",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="VcTyy6DJxJweJpURmub1b"
+      domain="www.chatbase.co"
+      defer>
+      </script>
     <div class="containertje">
-        <h1><span class="login">L</span><span class="login">O</span><span class="login">G</span><span class="login">I</span><span class="login">N</span></h1>
+      <h1><span class="login">L</span><span class="login">O</span><span class="login">G</span><span class="login">I</span><span class="login">N</span></h1>
     </div>
     <div class="container logincontainer">
         <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
@@ -162,7 +174,7 @@ $conn->close();
           <?php
               // Display a message if login is required
               if ($message === 'login_required') {
-                echo "<p style='color: #b01605;'>Please login first.</p>";
+                echo "<p style='color: #b01605;'>Please log in first!</p>";
               }
               // Display success message after successful login and no errors
               if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"]) && !($result->num_rows == 0) && !(($result->num_rows > 0 && !verifyPassword($password, $row["password_hash"])))) {
@@ -173,7 +185,7 @@ $conn->close();
         </form>
     </div>
     <div class="container logincontainer" style="background-color: transparent">
-          <span class="psw"><a href="../register">Create an account</a></span>
+          <span class="psw"><a href="../register">Register</a></span>
     </div>
     </main>
     <footer>
@@ -184,7 +196,7 @@ $conn->close();
             <ul>
               <li>
                 <a href="https://www.instagram.com/ietsgents/" target="_blank"
-                  ><img src="./img/instagram_logo.png" alt=""
+                  ><img src="./img/instagram_logo.png" alt="instagram"
                 /></a>
               </li>
             </ul>

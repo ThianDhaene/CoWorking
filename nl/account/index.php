@@ -80,7 +80,7 @@ if (isset($_POST['logout'])) {
     <div class="container">
         <header>
             <a href="../">
-            <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+            <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="ietsgents">
             </a>
             <nav>
                 <ul>
@@ -91,12 +91,25 @@ if (isset($_POST['logout'])) {
                 </ul>
             </nav>
             <ul>
-            <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
-            <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
+            <li><a href="../login"><img src="../img/account.webp" class="account" alt="login"></a></li>
+            <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt="winkelkar"></a></li>
             </ul>
         </header>
     </div>
     <main>
+    <script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "VcTyy6DJxJweJpURmub1b",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="VcTyy6DJxJweJpURmub1b"
+      domain="www.chatbase.co"
+      defer>
+      </script>
+        <div class="container">
         <?php 
         //Get adres
         if ($address_result && $address_result->num_rows > 0) {
@@ -104,7 +117,7 @@ if (isset($_POST['logout'])) {
         ?>
         <h1>Welkom, <?php echo $username; ?>!</h1>
         <div class="userinfo">
-            <p class="gebruiker">Jouw accountinformatie:</p>
+            <p class="gebruiker">Jouw accountinformatie.</p>
             <ul>
                 <li>Gebruikersnaam: <?php echo $username; ?></li>
                 <li>Email: <?php echo $email; ?></li>
@@ -191,7 +204,7 @@ if (isset($_POST['logout'])) {
             echo "<p>U heeft nog geen bestellingen.</p>";
         }
         ?>
-
+        </div>
 
     </main>
 

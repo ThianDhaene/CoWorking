@@ -38,7 +38,7 @@ header {
 }
 
 .container2 {
-  max-width: 1280px;
+  max-width: 70%;
   margin: 0 auto 0 auto;
   padding: 0 1rem 0 1rem;
 }
@@ -165,17 +165,17 @@ h3.kleding-change-long {
   text-align: center;
 }
 .quote-tekst2 {
-   color: rgba(63, 63, 63, 0.733);
-   text-align: center;
+  color: rgb(0, 0, 0);
+  text-align: center;
 }
 .quote-tekst3 {
- color: rgba(63, 63, 63, 0.363);
- font-style: italic;
+color: rgb(10, 10, 10);
+font-style: italic;
 }
 .easteregg {
-  text-decoration: none;
-  color: rgba(63, 63, 63, 0.363);
-  font-style: italic;
+ text-decoration: none;
+ color: rgb(10, 10, 10);
+ font-style: italic;
 }
 .btn-about {
   margin-bottom: 50px;
@@ -207,35 +207,44 @@ h3.kleding-change-long {
 }
 
 footer {
+  background-color: rgba(0,0,0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0,0,0, 0.3);
-  height: 40px; 
-  width: 100%;
-  overflow: hidden;
+  font-weight: bold;
 }
 
-.footer-p {
-  margin: 0;
-  font-size: 1.5rem;
+.footer-content {
+  display: flex;
+  align-items: center;
 }
 
+.footer-p,
 .socials {
   margin: 0;
 }
 
-.socials img {
-  margin: 0rem;
-  width: 1em;
+.footer-p p {
+  margin: 0;
 }
+
 .socials ul {
-  display: flex;
-  align-items: center;
-}
-.socials a {
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
+
+.socials li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.socials a img {
+  width: 20px;
+  height: 20px;
+}
+
+
 @media only screen and (max-width: 1550px) {
     
   nav ul a {

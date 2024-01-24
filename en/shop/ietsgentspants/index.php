@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
 <body>
     <header class="container">
         <a href="./../../">
-            <img src="../../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+            <img src="../../img/logo2_zonder_achtergrond.png" class="logo" alt="ietsgents">
         </a>
         <nav>
             <ul>
@@ -159,8 +159,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
             </ul>
         </nav>
         <ul>
-            <li><a href="../../login"><img src="../../img/account.webp" class="account" alt=""></a></li>
-            <li><a href="../../cart"><img src="../../img/winkelmandje.webp" class="cart" alt=""></a></li>
+            <li><a href="../../login"><img src="../../img/account.webp" class="account" alt="login"></a></li>
+            <li><a href="../../cart"><img src="../../img/winkelmandje.webp" class="cart" alt="cart"></a></li>
         </ul>
     </header>
     <main class="container">
@@ -176,19 +176,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
                 </div>
                 <span class="product-price" data-original-price="25.00">39.99 EUR</span>
 
-                <p class="product-description">Step into modern sophistication with the ietsgents Minimalistic Pants. Designed for simplicity and comfort, these pants feature clean lines and a tailored fit. Embrace a refined look that effortlessly transitions from day to night with the ietsgents Minimalistic Pants.</p>
+                <p class="product-description">Step into the world of modern sophistication with the ietsgents Minimalistic Pants. Designed for simplicity and comfort, these trousers feature clean lines and a tailored fit. Embrace a refined look that effortlessly transitions from day to night with the ietsgents Minimalistic Pants.</p>
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="add-to-cart-form">
-                  <label for="quantity" class="quantity-label">Quantity:</label>
-                  <input type="number" name="quantity" value="1" min="1" required class="quantity-input">
+                <label for="quantity" class="quantity-label">Quantity:</label>
+                  <input type="number" name="quantity" id="quantity" value="1" min="1" required="" class="quantity-input">
                   <br>
-                  <input type="submit" name="add_to_cart" value="Add to Cart" class="add-to-cart-button">
+                  <input type="submit" name="add_to_cart" value="Add to cart" class="add-to-cart-button">
                 </form>
               </div>
             </div>
             <div class="reviews">
               <div class="add-review">
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                    <label for="rating">Rating:</label>
+                    <label for="rating">Rating</label>
                     <div class="rating">
                         <?php
                         // Loop to generate 5 stars
@@ -200,13 +200,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
                     <input type="hidden" name="rating" id="selected-rating" value="0" required>
                     <br>
                     <label for="comment">Review:</label><br>
-                    <textarea name="comment" required></textarea>
+                    <textarea name="comment" id="comment" required=""></textarea>
                     <br>
                     <input type="submit" name="submit_review" value="Submit Review">
                 </form>
               </div>
               <div class="reviews-container">
-                <p><strong>What others think about this product:</strong></p>
+                <p><strong>What others think of this product:</strong></p>
                   <?php
                   if (empty($reviews)) {
                       echo "<p>No reviews available for this product.</p>";
@@ -215,9 +215,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
                       foreach ($reviews as $review):
                   ?>
                           <div class="review">
-                          <p><strong><?php echo $review['username'];?></strong></p>
+                              <p><strong><?php echo $review['username'];?></strong></p>
                               <p><strong>Rating:</strong> <?php echo generateStars($review['rating']); ?></p>
-                              <p><strong>Comment:</strong> <?php echo $review['comment']; ?></p>
+                              <p><strong>Review:</strong> <?php echo $review['comment']; ?></p>
                           </div>
                           <!-- Display the average rating -->
                       
@@ -231,19 +231,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit_review"])) {
         </div>
     </main>
     <footer>
-    <div class="footer-p">
-      <p>&copy; ietsgents 2023</p>
-    </div>
-    <nav class="socials">
-      <ul>
-        <li>
-          <a href="https://www.instagram.com/ietsgents/" target="_blank">
-            <img src="../img/instagram_logo.png" alt="">
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </footer>
+    </footer>
     <script src="../stars.js"></script>
 </body>
 

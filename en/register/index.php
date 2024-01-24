@@ -101,7 +101,7 @@ $conn->close();
 <body>
   <header>
     <a href="../">
-      <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+      <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="ietsgents">
     </a>
     <nav>
       <ul>
@@ -112,13 +112,25 @@ $conn->close();
       </ul>
     </nav>
     <ul>
-      <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
-      <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
+      <li><a href="../login"><img src="../img/account.webp" class="account" alt="login"></a></li>
+      <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt="cart"></a></li>
     </ul>
   </header>
   <main>
+  <script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "VcTyy6DJxJweJpURmub1b",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="VcTyy6DJxJweJpURmub1b"
+      domain="www.chatbase.co"
+      defer>
+      </script>
     <div class="containertje">
-      <h1><span class="about">R</span><span class="about">E</span><span class="about">G</span><span class="about">I</span><span class="about">S</span><span class="about">T</span><span class="about">E</span><span class="about">R</span></h1>
+    <h1><span class="about">R</span><span class="about">E</span><span class="about">G</span><span class="about">I</span><span class="about">S</span><span class="about">T</span><span class="about">E</span><span class="about">R</span></h1>
     </div>
 
     <div class="container">
@@ -129,14 +141,14 @@ $conn->close();
             // Display error message for invalid username after form submission
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
                 if (isset($checkUsernameResult) && $checkUsernameResult->num_rows > 0) {
-                    echo "<p style='color: red;'>Username is already taken. Please choose another.</p>";
+                    echo "<p style='color: red;'>Username has already been taken. Please choose another one.</p>";
                 }
             }
             ?>
           <br>
   
           <label for="password"><b>Password:</b></label>
-          <input type="password" name="password" placeholder="Enter Password" required>
+          <input type="password" name="password" placeholder="Enter password" required>
           <br>
   
           <label for="email"><b>Email:</b></label>
@@ -145,7 +157,7 @@ $conn->close();
             // Display error message for invalid email after form submission
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
                 if (isset($checkEmailResult) && $checkEmailResult->num_rows > 0) {
-                    echo "<p style='color: red;'>Email is already in use. Please use a different email.</p>";
+                    echo "<p style='color: red;'>Email is already in use. Please use a different email address.</p>";
                 }
             }
             ?>
@@ -161,7 +173,7 @@ $conn->close();
       </form>
     </div>
     <div class="container" style="background-color: transparent">
-      <span class="psw"><a href="../login">Already have an account?</a></span>
+      <span class="psw"><a href="../login">Do you already have an account?</a></span>
     </div>
   </main>
   </body>

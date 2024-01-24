@@ -82,82 +82,81 @@ if (isset($_POST['print_label'])) {
     </header>
     <main>
         <div class="container">
-            
-        </div>
         <h1>Admin Dashboard</h1>
 
-        <!-- Display Orders -->
-        <table>
-        <thead>
-            <tr>
-                <th>Order ID</th>
-                <th>User ID</th>
-                <th>Username</th> <!-- Add this line for username -->
-                <th>User Email</th> <!-- Add this line for user email -->
-                <th>Total Amount</th>
-                <th>Order Date</th>
-                <th>Status</th>
-                <th>Products</th>
-                <th>Address</th>
-                <th>Extra Info</th>
-                <th>Change Status</th>
-                <th>Print Label</th>
-            </tr>
-        </thead>
-        <tbody>
-            <hr>
-            <?php
-            while ($order = $orders_result->fetch_assoc()) {
-                $order_id = $order['order_id'];
-                $user_id = $order['user_id'];
+<!-- Display Orders -->
+<table>
+<thead>
+    <tr>
+        <th>Order ID</th>
+        <th>User ID</th>
+        <th>Username</th> <!-- Add this line for username -->
+        <th>User Email</th> <!-- Add this line for user email -->
+        <th>Total Amount</th>
+        <th>Order Date</th>
+        <th>Status</th>
+        <th>Products</th>
+        <th>Address</th>
+        <th>Extra Info</th>
+        <th>Change Status</th>
+        <th>Print Label</th>
+    </tr>
+</thead>
+<tbody>
+    <hr>
+    <?php
+    while ($order = $orders_result->fetch_assoc()) {
+        $order_id = $order['order_id'];
+        $user_id = $order['user_id'];
 
-                // Fetch user details for this order
-                $user_sql = "SELECT * FROM users WHERE user_id = $user_id";
-                $user_result = $conn->query($user_sql);
-                $user = ($user_result->num_rows > 0) ? $user_result->fetch_assoc() : null;
+        // Fetch user details for this order
+        $user_sql = "SELECT * FROM users WHERE user_id = $user_id";
+        $user_result = $conn->query($user_sql);
+        $user = ($user_result->num_rows > 0) ? $user_result->fetch_assoc() : null;
+        ?>
+        <tr>
+            <td><?php echo $order['order_id']; ?></td>
+            <td><?php echo $user_id; ?></td>
+            <td><?php echo ($user) ? $user['username'] : 'N/A'; ?></td> <!-- Display username -->
+            <td><?php echo ($user) ? $user['email'] : 'N/A'; ?></td> <!-- Display user email -->
+            <td><?php echo $order['total_amount']; ?></td>
+            <td><?php echo $order['order_date']; ?></td>
+            <td><?php echo $order['status']; ?></td>
+            <td>
+                <!-- Fetch and display products for this order -->
+                <?php
+                $products_sql = "SELECT * FROM order_items JOIN products ON order_items.product_id = products.product_id WHERE order_id = $order_id";
+                $products_result = $conn->query($products_sql);
+
+                while ($product = $products_result->fetch_assoc()) {
+                    echo $product['name'] . " x " . $product['quantity'] . "<br>";
+                }
                 ?>
-                <tr>
-                    <td><?php echo $order['order_id']; ?></td>
-                    <td><?php echo $user_id; ?></td>
-                    <td><?php echo ($user) ? $user['username'] : 'N/A'; ?></td> <!-- Display username -->
-                    <td><?php echo ($user) ? $user['email'] : 'N/A'; ?></td> <!-- Display user email -->
-                    <td><?php echo $order['total_amount']; ?></td>
-                    <td><?php echo $order['order_date']; ?></td>
-                    <td><?php echo $order['status']; ?></td>
-                    <td>
-                        <!-- Fetch and display products for this order -->
-                        <?php
-                        $products_sql = "SELECT * FROM order_items JOIN products ON order_items.product_id = products.product_id WHERE order_id = $order_id";
-                        $products_result = $conn->query($products_sql);
-
-                        while ($product = $products_result->fetch_assoc()) {
-                            echo $product['name'] . " x " . $product['quantity'] . "<br>";
-                        }
-                        ?>
-                    </td>
-                    <!-- Display Address Information -->
-                    <td><?php echo $order['street'] . ' ' . $order['number'] . ', ' . $order['postal_code'] . ' ' . $order['city'] . ', ' . $order['country']; ?></td>
-                    <td><?php echo $order['extra_info']; ?></td>
-                    <td>
-                        <!-- Form to change order status -->
-                        <form method="post" action="update_order_status.php">
-                            <input type="hidden" name="order_id" value="<?php echo $order['order_id']; ?>">
-                            <select name="new_status">
-                                <option value="Pending" <?php echo ($order['status'] == 'Pending') ? 'selected' : ''; ?>>Pending</option>
-                                <option value="Shipped" <?php echo ($order['status'] == 'Shipped') ? 'selected' : ''; ?>>Shipped</option>
-                                <option value="Delivered" <?php echo ($order['status'] == 'Delivered') ? 'selected' : ''; ?>>Delivered</option>
-                                <!-- Add more status options as needed -->
-                            </select>
-                            <input type="submit" name="update_status" value="Update" class="admin-button">
-                        </form>
-                    </td>
-                    <td>
-                        <button class="print-button" onclick="printOrderLabel(<?php echo $order_id; ?>)">Print Order Label</button>
-                    </td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+            </td>
+            <!-- Display Address Information -->
+            <td><?php echo $order['street'] . ' ' . $order['number'] . ', ' . $order['postal_code'] . ' ' . $order['city'] . ', ' . $order['country']; ?></td>
+            <td><?php echo $order['extra_info']; ?></td>
+            <td>
+                <!-- Form to change order status -->
+                <form method="post" action="update_order_status.php">
+                    <input type="hidden" name="order_id" value="<?php echo $order['order_id']; ?>">
+                    <label for="new_status">Order Status:</label>
+                    <select name="new_status" id="new_status">
+                        <option value="Pending" <?php echo ($order['status'] == 'Pending') ? 'selected' : ''; ?>>Pending</option>
+                        <option value="Shipped" <?php echo ($order['status'] == 'Shipped') ? 'selected' : ''; ?>>Shipped</option>
+                        <option value="Delivered" <?php echo ($order['status'] == 'Delivered') ? 'selected' : ''; ?>>Delivered</option>
+                    </select>
+                    <input type="submit" name="update_status" value="Update" class="admin-button">
+                </form>
+            </td>
+            <td>
+                <button class="print-button" onclick="printOrderLabel(<?php echo $order_id; ?>)">Print Order Label</button>
+            </td>
+        </tr>
+    <?php } ?>
+</tbody>
+</table>
+        </div>
     </main>
     <footer>
         

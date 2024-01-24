@@ -192,6 +192,19 @@ $product_result = $conn->query($product_sql);
   </div>
 
   <main>
+  <script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "VcTyy6DJxJweJpURmub1b",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="VcTyy6DJxJweJpURmub1b"
+      domain="www.chatbase.co"
+      defer>
+      </script>
+    <div class="container">
     <section class="section-inleiding">
     <h1><span class="carth1">W</span><span class="carth1">I</span><span class="carth1">N</span><span class="carth1">K</span><span class="carth1">E</span><span class="carth1">L</span><span class="carth1">M</span><span class="carth1">A</span><span class="carth1">N</span><span class="carth1">D</span><span class="carth1">J</span><span class="carth1">E</span></h1>
     </section>
@@ -265,6 +278,7 @@ $product_result = $conn->query($product_sql);
         <?php } else { ?>
             <p>Uw winkelmandje is leeg.</p>
         <?php } ?>
+    </div>
     </div>
   </main>
   <footer>

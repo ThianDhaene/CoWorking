@@ -80,7 +80,7 @@ if (isset($_POST['logout'])) {
     <div class="container">
         <header>
             <a href="../">
-            <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+            <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="ietsgents">
             </a>
             <nav>
                 <ul>
@@ -91,12 +91,25 @@ if (isset($_POST['logout'])) {
                 </ul>
             </nav>
             <ul>
-            <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
-            <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
+            <li><a href="../login"><img src="../img/account.webp" class="account" alt="login"></a></li>
+            <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt="cart"></a></li>
             </ul>
         </header>
     </div>
     <main>
+    <script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "VcTyy6DJxJweJpURmub1b",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="VcTyy6DJxJweJpURmub1b"
+      domain="www.chatbase.co"
+      defer>
+      </script>
+        <div class="container">
         <?php 
         //Get adres
         if ($address_result && $address_result->num_rows > 0) {
@@ -104,28 +117,28 @@ if (isset($_POST['logout'])) {
         ?>
         <h1>Welcome, <?php echo $username; ?>!</h1>
         <div class="userinfo">
-            <p class="gebruiker">Your account information:</p>
+            <p class="gebruiker">Your account information.</p>
             <ul>
                 <li>Username: <?php echo $username; ?></li>
                 <li>Email: <?php echo $email; ?></li>
                 <!-- Add more details as needed -->
             </ul>
-            <p class="adres">Your Address:</p>
+            <p class="adres">Your address:</p>
                 <ul>
                     <li>Street: <?php echo $street; ?></li>
-                    <li>Number: <?php echo $number; ?></li>
+                    <li>House Number: <?php echo $number; ?></li>
                     <li>City: <?php echo $city; ?></li>
                     <li>Postal Code: <?php echo $zipcode; ?></li>
                     <li>Country: <?php echo $country; ?></li>
                     <?php if (!empty($address['extra_info'])) { ?>
-                        <li>Extra Information: <?php echo $address['extra_info']; ?></li>
+                        <li>Extra information: <?php echo $address['extra_info']; ?></li>
                     <?php } ?>
                 </ul>
         </div>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <input type="submit" name="logout" value="Logout">
+            <input type="submit" name="logout" value="Log out">
         </form>
-        <h1>Your Orders</h1>
+        <h1>Your orders</h1>
         <?php
         // Check if there are orders
         if ($result->num_rows > 0) {
@@ -140,9 +153,9 @@ if (isset($_POST['logout'])) {
                 $items_result = $conn->query($items_sql);
         ?>
         <div class="order">
-                    <p>Order ID: <?php echo $order_id; ?></p>
-                    <p>Order Date: <?php echo $order_date; ?></p>
-                    <p>Total Amount: €<?php echo $total_amount; ?></p>
+                    <p>Order-ID: <?php echo $order_id; ?></p>
+                    <p>Order date: <?php echo $order_date; ?></p>
+                    <p>Total amount: €<?php echo $total_amount; ?></p>
                     <p>Status: <?php echo $status; ?></p>
 
                     <?php
@@ -191,9 +204,9 @@ if (isset($_POST['logout'])) {
             echo "<p>You have no orders yet.</p>";
         }
         ?>
-
-
+        </div>
     </main>
+
 </body>
 </html>
 <?php

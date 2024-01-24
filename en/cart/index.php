@@ -174,7 +174,7 @@ $product_result = $conn->query($product_sql);
   <div class="container">
     <header>
       <a href="../">
-        <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="">
+        <img src="../img/logo2_zonder_achtergrond.png" class="logo" alt="ietsgents">
       </a>
       <nav>
         <ul>
@@ -185,15 +185,28 @@ $product_result = $conn->query($product_sql);
         </ul>
       </nav>
       <ul>
-        <li><a href="../login"><img src="../img/account.webp" class="account" alt=""></a></li>
-        <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt=""></a></li>
+        <li><a href="../login"><img src="../img/account.webp" class="account" alt="login"></a></li>
+        <li><a href="../cart"><img src="../img/winkelmandje.webp" class="cart" alt="cart"></a></li>
       </ul>
     </header>
   </div>
 
   <main>
+  <script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "VcTyy6DJxJweJpURmub1b",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="VcTyy6DJxJweJpURmub1b"
+      domain="www.chatbase.co"
+      defer>
+      </script>
+    <div class="container">
     <section class="section-inleiding">
-    <h1><span class="carth1">S</span><span class="carth1">H</span><span class="carth1">O</span><span class="carth1">P</span><span class="carth1">P</span><span class="carth1">I</span><span class="carth1">N</span><span class="carth1">G</span><span class="carth1">&nbsp;</span><span class="carth1">C</span><span class="carth1">A</span><span class="carth1">R</span><span class="carth1">T</span></h1>
+    <h1><span class="carth1">S</span><span class="carth1">H</span><span class="carth1">O</span><span class="carth1">P</span><span class="carth1">P</span><span class="carth1">I</span><span class="carth1">N</span><span class="carth1">G</span><span class="carth1"> </span><span class="carth1">C</span><span class="carth1">A</span><span class="carth1">R</span><span class="carth1">T</span></h1>
     </section>
     <div class="cart-container">
         <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { ?>
@@ -239,12 +252,12 @@ $product_result = $conn->query($product_sql);
                     }
                 }} ?>
             </ul>
-            <p>Total Amount: €<?php echo calculateTotalAmount($conn); ?></p>
+            <p>Total amount: €<?php echo calculateTotalAmount($conn); ?></p>
             <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
                     <label for="street">Street:</label>
                     <input type="text" name="street" value="<?php echo $street; ?>" required>
                     <br>
-                    <label for="number">Number:</label>
+                    <label for="number">House number:</label>
                     <input type="text" name="number" value="<?php echo $number; ?>" required>
                     <br>
                     <label for="city">City:</label>
@@ -256,7 +269,7 @@ $product_result = $conn->query($product_sql);
                     <label for="country">Country:</label>
                     <input type="text" name="country" value="<?php echo $country; ?>" required>
                     <br>
-                    <label for="extra_info">Extra Information:</label>
+                    <label for="extra_info">Extra Informatiton:</label>
                     <textarea name="extra_info"><?php echo $extra_info; ?></textarea>
                     <br>
                     <input type="submit" name="checkout" value="Checkout">
@@ -265,6 +278,7 @@ $product_result = $conn->query($product_sql);
         <?php } else { ?>
             <p>Your shopping cart is empty.</p>
         <?php } ?>
+    </div>
     </div>
   </main>
   <footer>
